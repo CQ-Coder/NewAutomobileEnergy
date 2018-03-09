@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>car</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	<link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+	<div class="root-wrap">
+		<div class="navbar">
+			<div class="container clearfix">
+				<a href="javascript:;" class="nav-brand"><img src="imgs/logo.png"></a>
+				<ul class="nav-list clearfix">
+					<li>首页</li>
+					<li>关于我们</li>
+					<li>新闻中心</li>
+					<li>产品展示</li>
+					<li>工程中心</li>
+					<li>解决方案</li>
+					<li>人力资源</li>
+				</ul>
+				<div class="nav-right">
+					<p class="tab-group clearfix">
+						<span class="tab login">登录</span>
+						<span class="tab register">注册</span>
+						<span class="tab address">上海</span>
+					</p>
+					<h3 class="tel clearfix">
+						<a href="tel:4007792088">400 7792 088</a>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper index">
+			<div class="big-title">
+				<h2 class="text-title">免费注册</h2>
+			</div>
+			<div class="form-wrap">
+				<form>
+					<div class="form-group">
+						<label>用户名 ：</label>
+						<input class="text" placeholder="请输入用户名"/>
+					</div>
+					<div class="form-group">
+						<label>密  码 ：</label>
+						<input class="password" placeholder="请输入密码 "/>
+					</div>
+					<div class="form-group">
+						<label class="label-sure-psw">确认密码 ：</label>
+						<input type="password" class="" placeholder="请确认密码"/>
+					</div>
+					<div class="form-group">
+						<label class="label-tel">手机号码 ：</label>
+						<input type="tel" class="" placeholder="请输入手机号码"/>
+					</div>
+					<div class="form-group">
+						<label class="label-move-valid">滑动验证 ：</label>
+						<div id="slider">
+							<div id="slider_bg" style="width: 0px;"></div>
+							<span id="label" style="left: 0px;"></span> <span id="labelTip">拖动滑块验证</span>
+					    </div>
+					</div>
+					<div class="form-group valid-psw">
+						<label>验证码 ：</label>
+						<input type="tel" placeholder="请输入验证码"/>
+					</div>
+					<div class="btn-group short-msg">
+						<a class="btn btn-sm btn-outline-success">短信验证</a>
+					</div>
+					<div class="clear"></div>
+					<div class="btn-group m_t15">
+						<a class="btn btn-block btn-success">立即注册</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="footer index">
+			<div class="container clearfix">
+				<ul class="footer-list">
+					<li>技术研发</li>
+					<li>运行案例</li>
+					<li>交流合作</li>
+					<li>企业文化</li>
+					<li>联系我们</li>
+					<li>建议咨询</li>
+					<li>App专区</li>
+				</ul>
+				<p class="put-records">
+					<a>版权所有 2018 京ICP备17043415  北京市 通州区 徐辛庄 8号大院</a>
+				</p>
+			</div>	
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.slideunlock.js"></script>
+<script>
+	var slider = new SliderUnlock("#slider",{
+			successLabelTip : "验证成功"
+		},function(){
+			alert("验证成功");
+    	});
+    	
+    slider.init();
+</script>
+</html>

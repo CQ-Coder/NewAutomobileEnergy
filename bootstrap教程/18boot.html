@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+.tab-content{ border:1px #ddd solid; border-top:none; padding:50px; border-radius:0 0 5px 5px;}
+</style>
+</head>
+
+<body style="height:2000px;">
+<div class="container">
+	<nav class="navbar navbar-default navbar-static-top">
+    	<ul class="nav navbar-nav">
+        	<li class="active"><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container-fluid">
+	<nav class="navbar navbar-default">
+    	<ul class="nav navbar-nav">
+        	<li class="active"><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    </nav>
+</div>
+<nav class="navbar navbar-default">
+	<div class="container">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    </div>
+</nav>
+</body>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+
+//配置 方法 自定义事件
+$('#myTabs a').mouseover(function(){
+	$(this).tab('show');
+});
+</script>
+</html>
