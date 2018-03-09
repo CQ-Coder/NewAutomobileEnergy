@@ -1,0 +1,104 @@
+html, body {height: 100%;}
+.img-item-info {
+    position: relative;
+    z-index:9;
+    .img-desc {
+        padding-top:20px;
+        font-size:22px;
+        color:#fff;
+        opacity: 1;
+        &:before {
+            content: '';
+            width:34px;
+            height:34px;
+            background:url(../imgs/home-icon.png) no-repeat -81px 0;
+            display: inline-block;
+            margin: 0 20px;
+            margin-right: 10px;
+            position: relative;
+            top: 7px;
+        }
+        &.question { 
+            &:before {
+                background-position:-45px 0;
+            }    
+        }
+         &.run { 
+            &:before {
+                background-position:0px 0;
+            }    
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+   .img-item-info .img-desc {font-size:19px;}
+}
+
+
+.wrapper {
+    .item-wrap  {
+        margin-bottom:20px;
+    }
+    .big-title {
+        height:144px;
+        color:#fff;
+        h2{ margin-right: 20px;}
+        h2, h3 { font-size:26px;display: inline-block;margin-top:64px; vertical-align: middle;}
+        .energy-desc {font-size:19px;}
+    }
+    .list-item {
+        position: relative;
+        width: 222px;
+        height:286px;
+        margin: 0 auto;
+        padding:10px;
+        cursor: pointer;
+        img {
+            position: relative;
+           width:100%;
+           display: inline-block;
+           margin: 0 auto;
+        }
+        .shade {
+            position: absolute;
+            background: #000;
+            opacity: .3;
+            filter: alpha(opacity=30);
+            width: 242px;
+            height: 306px;
+            left: 0px;
+            top: 0px;
+        }
+        .img-desc {
+            padding-top:10px;
+            font-size:22px;
+            color:#fff;
+            opacity: 1;
+            position: relative;
+            &:before {
+                content: '';
+                width:34px;
+                height:34px;
+                background:url(../imgs/home-icon.png) no-repeat -81px 0;
+                display: inline-block;
+                margin: 0 20px;
+                margin-right: 10px;
+                position: relative;
+                top: 7px;
+            }
+            &.question { 
+                &:before {
+                    background-position:-45px 0;
+                }    
+            }
+             &.run { 
+                &:before {
+                    background-position:0px 0;
+                }    
+            }
+        }
+    }
+}
+
