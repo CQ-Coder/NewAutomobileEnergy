@@ -16,12 +16,12 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 
 gulp.task('clean', function (cb) {
-    return del(['dist/front/*'], cb);
+    return del(['dist/*'], cb);
 });
 
 gulp.task('html', function () {
-    return gulp.src('src/front/*.html')
-        .pipe(gulp.dest('dist/front'));
+    return gulp.src('src/*.html')
+        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('image', function () {
@@ -86,7 +86,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('src/front/*.html', ['html']);
+    gulp.watch('src/*.html', ['html']);
     gulp.watch('src/front/data/*.json', ['json']);
     gulp.watch('src/front/imgs/*', ['image']);
     gulp.watch('src/front/scss/**/*.scss', ['scss']);
@@ -101,10 +101,10 @@ gulp.task('staticServer', ['html','json' ,'image', 'cssImage', 'scss', 'css','co
             baseDir: "./dist",
             directory: true
         },
-        startPath: "front/index.html"
+        startPath: "index.html"
     });
 
-    gulp.watch('./src/front/*.html').on('change', browserSync.reload);
+    gulp.watch('./src/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('server', ['staticServer']);
