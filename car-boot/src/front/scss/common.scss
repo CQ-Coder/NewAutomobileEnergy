@@ -1,5 +1,5 @@
 .m_t15 {margin-top:15px!important;}
-
+html,body {height:100%;}
 body {
    background-image: url('../imgs/index-bg.jpg');
    background-repeat: no-repeat; 
@@ -181,43 +181,14 @@ body {
 @media screen and (min-width: 1201px) and (max-width: 1600px) {
    .navbar{padding:10px 0}
    .footer{padding:20px 0 }
-   /*
-    .wrapper {
-        
-            top:119px;
-            bottom:90px;
-        
-        
-        .img-item{
-              margin: -125px 0 0 -600px;
-              width:230px;
-              height:294px;
-              &+.img-item {
-                  margin: -125px 0 0 -150px;
-                  &+.img-item {
-                     margin: -125px 0 0 300px;
-                  }
-              }
-          }
-          
-          .big-title {
-              margin-top:-225px;
-          }
-        
-    }
-    */
-   
 }
 
 @media screen and (min-width: 1601px) {
      .navbar{padding:20px 0;}
      .footer{padding:30px 0 }
      .wrapper {
-         
             top:139px;
             bottom:110px;
-        
-         
         .img-item{
               margin: -150px 0 0 -590px;
               width:250px;
@@ -229,24 +200,40 @@ body {
                   }
               }
           }
-          /*
-          .big-title {
-              margin-top: -280px;
-          }
-          */
-        
     }
 }
 
-/*drag*/
-.label-move-valid {vertical-align:top;}
 
+/*针对登录、注册  定制layui*/
+.logReg {
+    .big-title {height:86px;text-align: center;line-height: 86px;font-size:24px;color:#fff;margin-top:20px;}
+    .layui-form {
+        .layui-form-item {
+            .layui-block, .layui-inline {border:2px solid #fff;}
+            .layline-clear {border:none;}
+            .layui-input-inline.vaild-psw {width:100px;}
+            .layui-form-label {font-size:14px;color:#fff;}
+            .layui-input {background:transparent;border:none;font-size: 14px;}
+            input::-webkit-input-placeholder {color:#fff;}
+            /*短信验证按钮*/
+            .valid-msg {
+                border:2px solid #fff;
+                height:42px;color:#fff;background:transparent;
+                &:hover {border-color:#acd04c;background:#acd04c;}
+            }
+            
+        }
+    }
+    .c-submit-btn {background:#acd04c;}
+}
+
+/*drag*/
 #slider {
-    width: 244px;
-    height: 36px;
+    width: 100%;
+    height: 38px;
     position: relative;
     border-radius: 2px;
-    background-color: #dae2d0;
+    background-color: rgba(0,0,0,0.1);
     overflow: hidden;
     text-align: center;
     -ms-user-select: none;
@@ -254,6 +241,7 @@ body {
     -moz-user-select: none;
     -webkit-user-select: none;
     display: inline-block;
+   vertical-align: middle;
 }
 #slider_bg {
   position: absolute;
@@ -266,10 +254,10 @@ body {
 
 #label {
   width: 36px;
+  height: 36px;
   position: absolute;
   left: 0;
   top: 0;
-  height: 36px;
   display: inline-block;
   border: 1px solid #cccccc;
   background: #fff;
@@ -279,7 +267,7 @@ body {
   font-size: 16px;
   font-weight: 900;
   background:url(../imgs/move-slider.png) no-repeat;
-  background-size: 100%; 
+  background-size: cover; 
 }
 
 #labelTip {
@@ -293,18 +281,4 @@ body {
   line-height: 36px;
   text-align: center;
   z-index: 2;
-}
-
-@media screen and (min-width: 1601px) { 
-   #slider { 
-        width: 423px;
-        height: 52px;
-    }
-    #label {
-        width: 52px;
-        height:52px;
-    }
-    #labelTip {
-        line-height: 52px;
-    }
 }

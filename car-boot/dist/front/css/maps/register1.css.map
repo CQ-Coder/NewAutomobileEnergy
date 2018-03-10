@@ -1,0 +1,1 @@
+{"version":3,"sources":["register1.scss"],"names":[],"mappings":"AAAA,KAAA,KAAY,OAAA,KACZ,KACG,iBAAA","file":"../register1.css","sourcesContent":["html, body {height: 100%;}\r\nbody {\r\n   background-image: url('../imgs/register-bg.jpg');\r\n}\r\n\r\n\r\n"]}
