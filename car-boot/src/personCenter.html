@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>个人中心</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="front/layui/css/layui.css"/>
+	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
+	<link rel="stylesheet" href="front/css/reset.css" />
+	<link rel="stylesheet" href="front/css/personCenter.css" />
+	<!-- 下面这串注释是要的(兼容ie8\9) -->
+	<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+	  <div class="layui-header">
+	    <div class="layui-logo">layui 后台布局</div>
+	    <!-- 头部区域（可配合layui已有的水平导航） -->
+	    <!--<ul class="layui-nav layui-layout-left">
+	      <li class="layui-nav-item"><a href="">控制台</a></li>
+	      <li class="layui-nav-item"><a href="">商品管理</a></li>
+	      <li class="layui-nav-item"><a href="">用户</a></li>
+	      <li class="layui-nav-item">
+	        <a href="javascript:;">其它系统<span class="layui-nav-more"></span></a>
+	        <dl class="layui-nav-child layui-anim layui-anim-upbit">
+	          <dd><a href="">邮件管理</a></dd>
+	          <dd><a href="">消息管理</a></dd>
+	          <dd><a href="">授权管理</a></dd>
+	        </dl>
+	      </li>
+	    </ul>-->
+	    <ul class="layui-nav layui-layout-right">
+	      <li class="layui-nav-item">
+	        <a href="javascript:;">
+	          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+	                    贤心
+	        <span class="layui-nav-more"></span></a>
+	        <dl class="layui-nav-child">
+	          <dd><a href="">基本资料</a></dd>
+	          <dd><a href="">安全设置</a></dd>
+	        </dl>
+	      </li>
+	      <li class="layui-nav-item"><a href="">退了</a></li>
+	    <span class="layui-nav-bar"></span></ul>
+	  </div>
+	  <div id="menu-left" class="layui-side">
+	  	<div class="logo">
+			<img src="front/imgs/personCenter-logo.png" />
+			<h3 class="energy-desc">
+				<p>亚 电 集 团</p>
+				<p>ASIA POWER GROUP</p>
+			</h3>
+		</div>
+		<div style="height:50px;background:transparent;"></div>
+	    <div class="layui-side-scroll">
+	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+	      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a class="" href="javascript:;">个人信息<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">密码修改</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">我的申请<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请安装</a></dd>
+	            <dd><a href="javascript:;">申请记录</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">报修中心<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请报修</a></dd>
+	            <dd><a href="javascript:;">报修记录</a></dd>
+	          </dl>
+	        </li>
+	      </ul>
+	  	</div>
+	  </div> 
+	  <div class="layui-body">
+	  	<div style="height:1000px;background:pink">red</div>
+	  </div>
+	  <div class="layui-footer">
+	    <!-- 底部固定区域 -->
+	    © layui.com - 底部固定区域
+	  </div>
+	</div>
+</body>
+<script src="front/js/jquery-1.7.2.min.js"></script>
+<script src="front/layui/layui.js"></script>
+<script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+	var oDiv = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
+				"版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院    </p></div>";
+	$("#menu-left").mCustomScrollbar({
+		theme:"minimal"
+	}).append($(oDiv));
+	
+	//JavaScript代码区域
+	layui.use('element', function(){
+	  var element = layui.element;
+	  console.log(element)
+	});
+</script>
+</html>

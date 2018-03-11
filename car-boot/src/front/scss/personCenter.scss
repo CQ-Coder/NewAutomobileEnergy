@@ -1,0 +1,78 @@
+/*重写 layui 后台模板*/
+.mCustomScrollBox { height: 85%;}
+.layui-layout-admin .layui-side {width:218px;top:0;z-index:9999;}
+.logo {
+    padding-top: 30px;
+    height: 58px;
+    img {display: inline-block;vertical-align: middle;margin-left: 10px;}
+    h3 {display: inline-block;vertical-align: middle; font-size: 13px;text-align: left;color:#fff;
+        P:first-child {text-align: center;font-size:17px;}
+    }
+}
+
+#menu-left {background:url(../imgs/personCenter-bg2.png) no-repeat 0 0;bakckground-size:cover;}
+.layui-layout-admin .layui-header {/* background-color: #fff;*/}
+
+.layui-nav-tree .layui-nav-item > a {
+    padding: 0 55px;
+    background:url(../imgs/menu-userinfo.png) no-repeat 27px center;
+    &:hover {
+        background:#fff;
+         color: #007ddb!important;
+        .layui-nav-more {border-color: #007DDB transparent transparent;}
+    }
+}    
+.layui-nav-tree .layui-nav-item:first-child {
+    &+.layui-nav-item  {
+        >a {
+          background:url(../imgs/menu-apply.png) no-repeat 27px center;
+        }
+        &+.layui-nav-item  { 
+            >a {
+          background:url(../imgs/menu-repeair.png) no-repeat 27px center;
+        }
+        }
+    }
+    
+}
+
+
+.layui-body {left:218px;}
+.layui-nav {background-color: transparent;}
+.layui-nav-itemed .layui-nav-child {text-indent: 46px;
+    dd {
+        a {
+            &:before {
+                content: "—";
+                position: relative;
+                left:-10px;
+            }
+        }
+    }
+}
+
+.menu-bottom {
+        padding-left:24px;
+    h3 {
+        color:#fff;
+        position:relative\0;top:3px\0;
+        i {
+            width:15px;
+            height:15px;
+            display: inline-block;
+            background:url(../imgs/careus.png) no-repeat 0 0;
+            margin-left: 30px;
+            vertical-align: text-bottom;
+            &+i{
+                height:18px;
+                background:url(../imgs/careus.png) no-repeat -20px 2px;
+            }
+        }
+    }
+    p{
+        margin-top:20px;
+        color: #fff;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
