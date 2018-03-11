@@ -1,0 +1,7 @@
+body {
+}
+.text-title {
+    &:before {
+        background: url(../imgs/login-title.png) no-repeat 0 0;
+    }
+}

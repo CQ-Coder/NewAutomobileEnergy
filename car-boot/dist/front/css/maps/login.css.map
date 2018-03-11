@@ -1,0 +1,1 @@
+{"version":3,"sources":["login.scss"],"names":[],"mappings":"AAEA,mBAEQ,WAAA,6BAAA,UAAA,EAAA","file":"../login.css","sourcesContent":["body {\r\n}\r\n.text-title {\r\n    &:before {\r\n        background: url(../imgs/login-title.png) no-repeat 0 0;\r\n    }\r\n}\r\n"]}

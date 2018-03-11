@@ -12,7 +12,7 @@ body {
 
 .wrapper {
     position:absolute;
-    top:109px;
+    top:121px;
     left:0;
     right:0;
     bottom:90px;
@@ -30,24 +30,6 @@ body {
            text-align: center;
            margin-bottom:100px;
         }
-        /*
-        ul.list-cont{
-            width:100%;
-            overflow:hidden;
-            
-            li.list-item{
-                width:30%;
-                height:200px;
-                background: pink;
-                float: left;
-                margin-right:5%;
-                margin-top:30px;
-                &:nth-child(3n){
-                    margin-right: 0;
-                }
-            }
-        }
-        */
     }
 }
 
@@ -174,7 +156,13 @@ body {
             }
         }
     }
-    .put-records {font-size:13px;margin-top:12px;}
+    .put-records {
+        font-size:13px;margin-top:12px;
+        a {
+            color:#fff;
+            :hover {color:#fff;}
+        }
+    }
 }
 
 
@@ -203,15 +191,31 @@ body {
     }
 }
 
+/* 表单共用标题 * */
+.text-title {
+    &:before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        margin-right: 15px;
+        position: relative;
+        top: 5px;
+    }
+}
+
 
 /*针对登录、注册  定制layui*/
 .logReg {
-    .big-title {height:86px;text-align: center;line-height: 86px;font-size:24px;color:#fff;margin-top:20px;}
+    .big-title {
+            text-align: center;line-height: 86px;font-size:24px;color:#fff;margin-top:20px;
+            img {margin:0 auto;}
+        }
     .layui-form {
         .layui-form-item {
             .layui-block, .layui-inline {border:2px solid #fff;}
             .layline-clear {border:none;}
-            .layui-input-inline.vaild-psw {width:100px;}
+            .layui-input-inline.vaild-psw {width:130px;}
             .layui-form-label {font-size:14px;color:#fff;}
             .layui-input {background:transparent;border:none;font-size: 14px;}
             input::-webkit-input-placeholder {color:#fff;}
@@ -225,12 +229,15 @@ body {
         }
     }
     .c-submit-btn {background:#acd04c;}
+    .valid-img {   width:96px;height: 42px; color: #fff; background: 0 0;cursor: pointer;}
+    .layui-form-checkbox[lay-skin=primary] span {color:#fff;}
+    .forget-psw {display:inline-block;height:28px;margin-top: 10px;cursor: pointer;text-decoration: underline;color:#fff;}
 }
 
 /*drag*/
 #slider {
     width: 100%;
-    height: 38px;
+    height: 36px;
     position: relative;
     border-radius: 2px;
     background-color: rgba(0,0,0,0.1);
@@ -254,12 +261,12 @@ body {
 
 #label {
   width: 36px;
-  height: 36px;
+  height: 38px;
+  border-right:2px solid #accf4b;
   position: absolute;
   left: 0;
   top: 0;
   display: inline-block;
-  border: 1px solid #cccccc;
   background: #fff;
   z-index: 3;
   cursor: move;

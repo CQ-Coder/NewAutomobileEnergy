@@ -1,0 +1,1 @@
+{"version":3,"sources":["forget-psw.scss"],"names":[],"mappings":"AAAA,KAAO,iBAAA,4BACP,MAAO,YAAA,KAAkB,MAAA","file":"../forget-psw.css","sourcesContent":["body { background-image: url('../imgs/forget-psw.png');}\r\ninput {caret-color:#fff;color:#fff;}"]}

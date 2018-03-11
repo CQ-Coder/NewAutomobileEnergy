@@ -2,13 +2,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>car</title>
+	<title>注册</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="front/layui/css/layui.css"/>
 	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
 	<link rel="stylesheet" href="front/css/reset.css" />
 	<link rel="stylesheet" href="front/css/common.css" />
 	<link rel="stylesheet" href="front/css/register1.css" />
+	<!-- 下面这串注释是要的(兼容ie8\9) -->
 	<!--[if lt IE 9]>
 	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
 	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -53,7 +54,7 @@
 							  	<div class="layui-block">
 								    <label class="layui-form-label">用户名：</label>
 								    <div class="layui-input-block">
-								      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+								      <input type="text" name="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
 								    </div>
 								</div>    
 							  </div>
@@ -77,7 +78,7 @@
 							  		<div class="layui-block">
 									    <label class="layui-form-label">手机号码：</label>
 									    <div class="layui-input-block">
-									       <input type="tel" name="phone" lay-verify="required|phone" placeholder="请输手机号码" autocomplete="off" class="layui-input">
+									       <input type="tel" name="phone" placeholder="请输手机号码" autocomplete="off" class="layui-input">
 									    </div>
 									</div>    
 							  </div>
@@ -85,7 +86,6 @@
 							  	<div class="layui-block">
 								    <label class="layui-form-label" style="vertical-align: middle;">滑块验证：</label>
 								    <div class="layui-input-block">
-								       <!--<input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">-->
 								       	<div id="slider">
 											<div id="slider_bg" style="width: 0px;"></div>
 											<span id="label" style="left: 0px;"></span> <span id="labelTip">拖动滑块验证</span>
@@ -97,59 +97,18 @@
 								    <div class="layui-inline">
 								      <label class="layui-form-label">验证码：</label>
 								      <div class="layui-input-inline vaild-psw">
-								        <input type="text" name="number" lay-verify="required|number" placeholder="请输验证码"  autocomplete="off" class="layui-input">
+								        <input type="text" name="number" placeholder="请输验证码"  autocomplete="off" class="layui-input">
 								      </div>
 								    </div>
 								   <div class="layui-inline layline-clear fr" style="margin-right:0px;">
 								     <button class="layui-btn layui-btn-normal valid-msg">短信按钮</button>
 								    </div>
 								 </div>
-								  <button class="layui-btn layui-btn-fluid c-submit-btn">立即注册</button>
+								 <a class="layui-btn layui-btn-fluid c-submit-btn" lay-submit lay-filter="formRegister">立即注册</a>
 							</form>  
 						</div>
 					</div>	
 				</div>
-				<!--<div class="big-title">
-					<h2 class="text-title">免费注册</h2>
-				</div>
-				<div class="form-wrap">
-					<form>
-						<div class="form-group">
-							<label>用户名 ：</label>
-							<input class="text" placeholder="请输入用户名"/>
-						</div>
-						<div class="form-group">
-							<label>密  码 ：</label>
-							<input class="password" placeholder="请输入密码 "/>
-						</div>
-						<div class="form-group">
-							<label class="label-sure-psw">确认密码 ：</label>
-							<input type="password" class="" placeholder="请确认密码"/>
-						</div>
-						<div class="form-group">
-							<label class="label-tel">手机号码 ：</label>
-							<input type="tel" class="" placeholder="请输入手机号码"/>
-						</div>
-						<div class="form-group">
-							<label class="label-move-valid">滑动验证 ：</label>
-							<div id="slider">
-								<div id="slider_bg" style="width: 0px;"></div>
-								<span id="label" style="left: 0px;"></span> <span id="labelTip">拖动滑块验证</span>
-						    </div>
-						</div>
-						<div class="form-group valid-psw">
-							<label>验证码 ：</label>
-							<input type="tel" placeholder="请输入验证码"/>
-						</div>
-						<div class="btn-group short-msg">
-							<a class="btn btn-sm btn-outline-success">短信验证</a>
-						</div>
-						<div class="clear"></div>
-						<div class="btn-group m_t15">
-							<a class="btn btn-block btn-success">立即注册</a>
-						</div>
-					</form>
-				</div>-->
 			</div>	
 		</div>
 		<div class="footer index">
@@ -171,6 +130,7 @@
 	</div>
 </body>
 <script src="front/js/jquery-1.7.2.min.js"></script>
+<script src="front/layui/layui.js"></script>
 <script src="front/js/jquery.slideunlock.js"></script>
 <script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
@@ -184,5 +144,23 @@
     	});
     	
     slider.init();
+    
+     //必须在该方法下执行
+    layui.use('form', function(){
+	  var form = layui.form;
+	 	//询问框
+		layer.confirm('确认提交？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+		   //ajax
+		  layer.msg('提交成功', {icon: 1});
+		}, function(){
+			//取消做的事情
+		  layer.msg('也可以这样', {
+		    time: 20000, //20s后自动关闭
+		    btn: ['明白了', '知道了']
+		  });
+		});
+	});   
 </script>
 </html>

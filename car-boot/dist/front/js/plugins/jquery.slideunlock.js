@@ -162,7 +162,7 @@
 
         me.index = 0;
         me.sliderBg .animate({'width':0},me.opts.duration);
-        me.elm.find("#label").animate({left: me.index}, me.opts.duration)
+        me.elm.find("#slider_bg").animate({left: me.index}, me.opts.duration)
             .next("#lableTip").animate({opacity: 1}, me.opts.duration);
         me.updateView();
     };
