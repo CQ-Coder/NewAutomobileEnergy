@@ -10,3 +10,17 @@ body {
     }
 }
 
+/*注册提示页*/
+.register-tip {
+    button {
+        width:102px;
+        height:30px;
+        line-height: 30px;
+        &:first-child {
+            background-color:#b7d067;
+            &+button{
+                background-color:rgba(0,0,0,0.3)
+            }
+        }
+    }
+}

@@ -42,19 +42,31 @@
 			</div>
 		</div>
 		<div class="wrapper">
-			<div class="container logReg">
+			<div class="container logReg register-tip">
 				<div class="layui-fluid">
 					<div class="layui-row">
-				    	<div class="layui-col-lg4 layui-col-lg-offset4 layui-col-md4 layui-col-md-offset4 layui-col-sm4 layui-col-sm-offset3 layui-col-xs4 layui-col-xs-offset2" >
+				    	<div class="layui-col-lg5 layui-col-lg-offset3 layui-col-md5 layui-col-md-offset3 layui-col-sm5 layui-col-sm-offset2 layui-col-xs5 layui-col-xs-offset1" 
+				    		 style="margin-top:35px;position: relative;left:20px;">
 							<div class="big-title">
 								<h2 class="text-title step2">恭喜您！注册成功！</h2>
 							</div>
 							<div class="layui-block">
-								<h3 class="tips-section" style="text-align:left;"> 您的登录账号是 lovedeal ,成为亚电集团第 100900 位会员！</h3>
+								<h3 class="tips-section" style="text-align:left;"> 您的登录账号是 <span class="account">lovedeal</span> ,成为亚电集团第 <span class="num">100900</span> 位会员！</h3>
 							</div>
+							<div class="layui-block"  style="margin-top:20px;line-height: 28px;">
+								<h4 class="tips-section"> 
+									您可以在这里接入您的电话、邮件、微信、微博、表单，等客户支持渠道，
+									并让客服用工单的形式相应和管理从上述各个渠道的客户问题请求！
+								</h4>
+							</div>
+							<div class="layui-col-lg-offset4 layui-col-md-offset3 layui-col-sm-offset4 layui-col-xs-offset4" style="margin-top:35px;position: relative;left:-20px;">
+								<button class="layui-btn layui-btn-normal  layui-btn-md">完善资料</button>
+								<button class="layui-btn layui-btn-normal  layui-btn-md">开始使用</button>
+							</div>	
 							<div class="layui-block">
-								<h4 class="tips-section" style="margin-top:20px;"> 您可以在这里接入您的电话、邮件、微信、微博、表单，等客户支持渠道，
-并让客服用工单的形式相应和管理从上述各个渠道的客户问题请求！</h4>
+								<h2 class="tips-section" style="margin-top:20px;line-height: 50px;"> 
+									<span class="time">10S</span> 之后自动跳转
+								</h2>
 							</div>
 						</div>
 					</div>	
@@ -103,7 +115,7 @@
 		  btn: ['确定','取消'] //按钮
 		}, function(){
 		   //ajax
-		  layer.msg('提交成功', {icon: 1});
+		  layer.msg('提交成功', {icon: 0});
 		}, function(){
 			//取消做的事情
 		  layer.msg('也可以这样', {

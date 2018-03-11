@@ -54,7 +54,7 @@
 							  	<div class="layui-block">
 								    <label class="layui-form-label">用户名：</label>
 								    <div class="layui-input-block">
-								      <input type="text" name="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+								      <input type="text" name="username" autocomplete="off" placeholder="请输入用户名" class="layui-input">
 								    </div>
 								</div>    
 							  </div>
@@ -130,13 +130,14 @@
 	</div>
 </body>
 <script src="front/js/jquery-1.7.2.min.js"></script>
-<script src="front/layui/layui.js"></script>
+<script src="front/layui/layui.all.js"></script>
 <script src="front/js/jquery.slideunlock.js"></script>
 <script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
+	
 	$(".wrapper").mCustomScrollbar({
-			theme:"minimal"
-		});
+		theme:"minimal"
+	});
 	var slider = new SliderUnlock("#slider",{
 			successLabelTip : "验证成功"
 		},function(){
@@ -145,15 +146,18 @@
     	
     slider.init();
     
-     //必须在该方法下执行
-    layui.use('form', function(){
-	  var form = layui.form;
-	 	//询问框
+   $(function() {
+   		var form = layui.form;
+    	var layer = layui.layer;
+    	layer.msg('提交成功', {maxWidth:100});
+    	/*
+		  layer.msg('提交成功');*/
+    	//询问框
 		layer.confirm('确认提交？', {
 		  btn: ['确定','取消'] //按钮
 		}, function(){
 		   //ajax
-		  layer.msg('提交成功', {icon: 1});
+		  layer.msg('提交成功', {icon: 0, time: 2000 });
 		}, function(){
 			//取消做的事情
 		  layer.msg('也可以这样', {
@@ -161,6 +165,6 @@
 		    btn: ['明白了', '知道了']
 		  });
 		});
-	});   
+   })
 </script>
 </html>
