@@ -232,6 +232,11 @@ body {
     .valid-img {   width:96px;height: 42px; color: #fff; background: 0 0;cursor: pointer;}
     .layui-form-checkbox[lay-skin=primary] span {color:#fff;}
     .forget-psw {display:inline-block;height:28px;margin-top: 10px;cursor: pointer;text-decoration: underline;color:#fff;}
+    h3.tips-section {font-size:16px; text-align:center;color:#fff;
+        a {color:#fff;text-decoration: underline;cursor: pointer;}}
+    h4.tips-section {font-size:13px; text-align:center;color:#fff;
+        a {color:#fff;text-decoration: underline;cursor: pointer;}}
+
 }
 
 /*drag*/

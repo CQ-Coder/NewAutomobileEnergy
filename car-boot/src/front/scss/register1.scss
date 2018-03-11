@@ -2,8 +2,11 @@ body {
    background-image: url('../imgs/register-bg.jpg');
 }
 .text-title {
-    &:before {
+    &.step1:before {
         background: url(../imgs/register-title.png) no-repeat 0 0;
+    }
+    &.step2:before {
+        background: url(../imgs/register-success-icon.png) no-repeat 0 0;
     }
 }
 

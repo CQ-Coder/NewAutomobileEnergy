@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>登录</title>
+	<title>忘记密码 -step2</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="front/layui/css/layui.css"/>
 	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
 	<link rel="stylesheet" href="front/css/reset.css" />
 	<link rel="stylesheet" href="front/css/common.css" />
-	<link rel="stylesheet" href="front/css/mobile-valid.css" />
+	<link rel="stylesheet" href="front/css/forget-psw.css" />
 	<!-- 下面这串注释是要的(兼容ie8\9) -->
 	<!--[if lt IE 9]>
 	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -47,18 +47,11 @@
 					<div class="layui-row">
 				    	<div class="layui-col-lg4 layui-col-lg-offset4 layui-col-md4 layui-col-md-offset4 layui-col-sm4 layui-col-sm-offset3 layui-col-xs4 layui-col-xs-offset2" >
 							<div class="big-title">
-								<h2 class="text-title">充电桩安装申请</h2>
+								<img src="front/imgs/forget-step1.png" />
+								<h3>输入新密码</h3>
 							</div>
-							<form class="layui-form" action="">
-							  <div class="layui-form-item">
-							  	<div class="layui-block">
-								    <label class="layui-form-label">用户名：</label>
-								    <div class="layui-input-block">
-								      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
-								    </div>
-								</div>    
-							  </div>
-							  <div class="layui-form-item">
+							<form class="layui-form" action="" >
+							 <div class="layui-form-item">
 							  	<div class="layui-block">
 								    <label class="layui-form-label">密  码：</label>
 								    <div class="layui-input-block">
@@ -67,24 +60,14 @@
 								</div>    
 							  </div>
 							  <div class="layui-form-item">
-								    <div class="layui-inline">
-								      <label class="layui-form-label">图片验证：</label>
-								      <div class="layui-input-inline vaild-psw">
-								        <input type="text" name="number" placeholder="请输验证码"  autocomplete="off" class="layui-input">
-								      </div>
-								    </div>
-								   <div class="layui-inline layline-clear fr" style="margin-right:0px;">
-								   		<img src="front/imgs/img-valid-psw.png" class="valid-img"/>
+							  	<div class="layui-block">
+								    <label class="layui-form-label">确认密码：</label>
+								    <div class="layui-input-block">
+								       <input type="password" name="password" placeholder="请输确认密码" autocomplete="off" class="layui-input">
 								    </div>
 								</div>
-								<a id="login" class="layui-btn layui-btn-fluid c-submit-btn" lay-submit lay-filter="formLogin">登  录</a>
-								 <div class="layui-form-item" pane="">
-								    <div class="layui-input-inline">
-								      <input type="checkbox" name="like1[write]" lay-skin="primary" title="记住用户名" checked="">
-								    </div>
-								    <span class="vertical-mid"></span>
-								    <a class="forget-psw layui-text fr">忘记密码？</a>
-								</div>  	
+							 </div>	
+								<a class="layui-btn layui-btn-fluid c-submit-btn" lay-submit lay-filter="formLogin">下一步</a>  	
 							</form>  
 						</div>
 					</div>	
@@ -111,19 +94,35 @@
 </body>
 <script src="front/js/jquery-1.7.2.min.js"></script>
 <script src="front/layui/layui.js"></script>
-<script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="front/js/jquery.slideunlock.js"></script>
 <script>
-	$(".wrapper").mCustomScrollbar({
-		theme:"minimal"
-	});
+	var slider = new SliderUnlock("#slider",{
+			successLabelTip : "验证成功"
+		},function(){
+			alert("验证成功");
+    	});
+    	
+    slider.init();
     
+    //必须在该方法下执行
     layui.use('form', function(){
 	  var form = layui.form;
-	  //监听提交
-	  form.on('submit(formLogin)', function(data){
-	    layer.msg(JSON.stringify(data.field));
-	    return false;
-	  });
+	  
+	  	/*
+	 	//询问框
+		layer.confirm('确认提交？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+		   //ajax
+		  layer.msg('提交成功', {icon: 1});
+		}, function(){
+			//取消做的事情
+		  layer.msg('也可以这样', {
+		    time: 20000, //20s后自动关闭
+		    btn: ['明白了', '知道了']
+		  });
+		});
+		*/
 	});  
 </script>
 </html>
