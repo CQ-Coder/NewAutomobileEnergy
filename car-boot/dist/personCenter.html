@@ -17,21 +17,6 @@
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
 	  <div class="layui-header">
-	    <div class="layui-logo">layui 后台布局</div>
-	    <!-- 头部区域（可配合layui已有的水平导航） -->
-	    <!--<ul class="layui-nav layui-layout-left">
-	      <li class="layui-nav-item"><a href="">控制台</a></li>
-	      <li class="layui-nav-item"><a href="">商品管理</a></li>
-	      <li class="layui-nav-item"><a href="">用户</a></li>
-	      <li class="layui-nav-item">
-	        <a href="javascript:;">其它系统<span class="layui-nav-more"></span></a>
-	        <dl class="layui-nav-child layui-anim layui-anim-upbit">
-	          <dd><a href="">邮件管理</a></dd>
-	          <dd><a href="">消息管理</a></dd>
-	          <dd><a href="">授权管理</a></dd>
-	        </dl>
-	      </li>
-	    </ul>-->
 	    <ul class="layui-nav layui-layout-right">
 	      <li class="layui-nav-item">
 	        <a href="javascript:;">
@@ -82,23 +67,25 @@
 	  	</div>
 	  </div> 
 	  <div class="layui-body">
-	  	<div style="height:1000px;background:pink">red</div>
+	  	<div class="body-fixw" >
+	  		<div class="body-container">
+	  			
+	  		</div>
+	  	</div>
 	  </div>
-	  <div class="layui-footer">
-	    <!-- 底部固定区域 -->
-	    © layui.com - 底部固定区域
-	  </div>
+	  <!--<div class="layui-footer"></div>-->
 	</div>
 </body>
 <script src="front/js/jquery-1.7.2.min.js"></script>
 <script src="front/layui/layui.js"></script>
 <script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
-	var oDiv = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
+	var imgBg = '<img class="menu-bg" src="front/imgs/personCenter-bg2.png" />';
+	var menuBottom = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
 				"版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院    </p></div>";
 	$("#menu-left").mCustomScrollbar({
 		theme:"minimal"
-	}).append($(oDiv));
+	}).append($(menuBottom)).prepend($(imgBg));
 	
 	//JavaScript代码区域
 	layui.use('element', function(){
