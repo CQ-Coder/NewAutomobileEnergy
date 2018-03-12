@@ -243,7 +243,10 @@
 	var element = layui.element;
 	var form = layui.form;
 	
-	element.render('nav', 'test1');
+	/*动态插入元素，比如表单内 联动省市区 ， 动态插入标签之后，就直接 form.render() 才能看到layui渲染过后的效果*/
+	
+	//element.render('nav', 'test1');
+	
 	element.on('tab(applyTab)', function(data) {
 		console.log(data.elem)//获取当前点击的jq对象
 		console.log(data.index)//获取当前点击的tab角标
@@ -252,7 +255,6 @@
 	element.on('nav(navList)', function(data) {
 		console.log(data[0].tagName)//获取当前点击原生对象
 	});
-	
 	
 	//JavaScript代码区域
 	layui.use('element', function(){
@@ -264,7 +266,6 @@
 	  console.log(data.elem); //得到radio原始DOM对象
 	  console.log(data.value); //被点击的radio的value值
 	});  
-	
 	
 	//缓存执行tab函数  
 	//cacheTab("#containerTab", 3) 
