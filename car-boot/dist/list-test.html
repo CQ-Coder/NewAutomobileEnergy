@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>个人中心 - 申请安装</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="front/layui/css/layui.css"/>
+	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
+	<link rel="stylesheet" href="front/css/reset.css" />
+	<link rel="stylesheet" href="front/css/personCenter.css" />
+	<link rel="stylesheet" href="front/css/personCenter-list.css" />
+	<!-- 下面这串注释是要的(兼容ie8\9) -->
+	<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+	  <div class="layui-header">
+	    <ul class="layui-nav layui-layout-right" lay-filter="navList">
+	      <li class="layui-nav-item">
+	        <a href="javascript:;">
+	          <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 
+	          	你好！CQ-Coder@163.com
+	        <span class="layui-nav-more"></span>
+	        </a>
+	        <dl class="layui-nav-child">
+	          <dd><a href="javascript:;">基本资料</a></dd>
+	          <dd><a href="javascript:;">安全设置</a></dd>
+	        </dl>
+	      </li>
+	      <li class="layui-nav-item"><a href="javascript:;">退了</a></li>
+	    </ul>
+	  </div>
+	  <div id="menu-left" class="layui-side">
+	  	<div class="logo">
+			<img src="front/imgs/personCenter-logo.png" />
+			<h3 class="energy-desc">
+				<p>亚 电 集 团</p>
+				<p>ASIA POWER GROUP</p>
+			</h3>
+		</div>
+		<div style="height:50px;background:transparent;"></div>
+	    <div class="layui-side-scroll">
+	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+	      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a class="" href="javascript:;">个人信息<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">密码修改</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">我的申请<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请安装</a></dd>
+	            <dd><a href="javascript:;">申请记录</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">报修中心<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请报修</a></dd>
+	            <dd><a href="javascript:;">报修记录</a></dd>
+	          </dl>
+	        </li>
+	      </ul>
+	  	</div>
+	  </div> 
+	  <div class="layui-body">
+	  	<div class="body-fixw" >
+	  		<div class="body-container form apply-install-list">
+	  			<div class="big-title">
+	  				<h2 class="text-title">申请记录</h2>
+				</div>
+				
+				<table class="layui-table" lay-data="{width: 954, height:332, url:'/data/table-data.json', page:true, id:'idTest'}" lay-filter="demo">
+				  <thead>
+				    <tr>
+				      <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+				      <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+				      <th lay-data="{field:'username', width:80}">用户名</th>
+				      <th lay-data="{field:'sex', width:80, sort: true}">性别</th>
+				      <th lay-data="{field:'city', width:80}">城市</th>
+				      <th lay-data="{field:'sign', width:160}">签名</th>
+				      <th lay-data="{field:'experience', width:80, sort: true}">积分</th>
+				      
+				      <th lay-data="{field:'classify', width:80}">职业</th>
+				      <th lay-data="{field:'wealth', width:135, sort: true}">财富</th>
+				      <th lay-data="{field:'score', width:80, sort: true, fixed: 'right'}">评分</th>
+				      <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+				    </tr>
+				  </thead>
+				</table>
+				 
+				<script type="text/html" id="barDemo">
+				  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+				  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+				</script>
+				
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+</body>
+<script src="front/js/jquery-1.7.2.min.js"></script>
+<!--  这边换了一个 引用js,不用layui.js，所以下面的写法 不用use方法 直接全局变量引用， 比如  var form = layui.form; -->
+<script src="front/layui/layui.js"></script>
+<script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+	var imgBg = '<img class="menu-bg" src="front/imgs/personCenter-bg2.png" />';
+	var menuBottom = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
+				"版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院    </p></div>";
+				
+	$("#menu-left").mCustomScrollbar({
+		theme:"minimal"
+	}).append($(menuBottom)).prepend($(imgBg));
+	
+	
+	layui.use('table', function(){
+  var table = layui.table;
+  //监听表格复选框选择
+  table.on('checkbox(demo)', function(obj){
+    console.log(obj)
+  });
+  //监听工具条
+  table.on('tool(demo)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'detail'){
+      layer.msg('ID：'+ data.id + ' 的查看操作');
+    } else if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+    }
+  });
+  
+  var $ = layui.$, active = {
+    getCheckData: function(){ //获取选中数据
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.alert(JSON.stringify(data));
+    }
+    ,getCheckLength: function(){ //获取选中数目
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.msg('选中了：'+ data.length + ' 个');
+    }
+    ,isAll: function(){ //验证是否全选
+      var checkStatus = table.checkStatus('idTest');
+      layer.msg(checkStatus.isAll ? '全选': '未全选')
+    }
+  };
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+});
+	
+</script>
+</html>

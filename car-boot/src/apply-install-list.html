@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
 	<link rel="stylesheet" href="front/css/reset.css" />
 	<link rel="stylesheet" href="front/css/personCenter.css" />
-	<link rel="stylesheet" href="front/css/personCenter-list.css" />
+	<link rel="stylesheet" href="front/css/table-list.css" />
 	<!-- 下面这串注释是要的(兼容ie8\9) -->
 	<!--[if lt IE 9]>
 	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -69,15 +69,53 @@
 	  	</div>
 	  </div> 
 	  <div class="layui-body">
+		<!--<img src="front/imgs/charging-pile-question.png" style="position: absolute;width:100%;height:100%;left:0;top:0;"/>-->
 	  	<div class="body-fixw" >
 	  		<div class="body-container form apply-install-list">
 	  			<div class="big-title">
 	  				<h2 class="text-title">申请记录</h2>
 				</div>
+				<div class="search-wrap">
+					<form class="layui-form">
+						    <div class="layui-input-inline">
+						    	<label class="layui-form-label">客户类型：</label>
+						      <select name="interest" lay-filter="customerType">
+						        <option value=""></option>
+						        <option value="0">个人</option>
+						        <option value="1" selected="">车企</option>
+						        <option value="2">企业</option>
+						      </select>
+						     </div>
+					 	 	<div class="layui-inline time-line">
+						       	 <label class="layui-form-label">提交时间：</label>
+							      <div class="layui-input-inline">
+							       	 <input type="text" name="date" id="start-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+							      </div>
+						    </div>
+							 <div class="layui-inline">
+							      <div class="layui-input-inline">
+							       	<input type="text" name="date" id="end-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+							      </div>
+						    </div>
+						    <div class="layui-inline">
+					      		<a href="javascript:;" class="layui-btn layui-btn-normal search btn-8dc87d">查询</a>
+					      		<a href="javascript:;" class="layui-btn layui-btn-normal reset btn-009688">重置</a>
+						    </div>
+					 	 </div>
+					</form> 	 
+				</div> 	 
+				<table class="layui-hide" id="table" lay-filter="layui-table" ></table>
+				<div id="demo7"></div>
+				<script type="text/html" id="toolBar">
+				  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail" >查看</a>
+				  <a class="layui-btn layui-btn-xs" lay-event="edit" >编辑</a>
+				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" >删除</a>
+				</script>
 	  		</div>
 	  	</div>
 	  </div>
 	</div>
+	
 </body>
 <script src="front/js/jquery-1.7.2.min.js"></script>
 <!--  这边换了一个 引用js,不用layui.js，所以下面的写法 不用use方法 直接全局变量引用， 比如  var form = layui.form; -->
@@ -108,5 +146,156 @@
 	});
 	
 	
+	
+	/**********************************表格数据初始化***************************************/
+	var params = {
+		beginTime: "",
+	 	endTime: "",
+	 	customerType: null
+	}
+	
+	form.on('select(customerType)', function (data) {
+		console.log(data.elem); //得到select原始DOM对象
+		console.log(data.value); //得到被选中的值
+		console.log(data.name); //得到被选中的文本
+		console.log(data.othis); //得到美化后的DOM对象
+		
+		params.customerType = data.value;
+	});
+	
+	
+	var table = layui.table;
+	var laypage = layui.laypage;
+	  //第一个实例
+	  table.render({
+	    elem: '#table'
+	    ,method: 'get'
+	    ,height: 466
+	    ,url: '/data/table-data.json' //数据接口
+	    ,page: {
+			curr:  1,
+			groups: 6,
+			prev: '上一页',
+			next: '下一页',
+			first: '首页',
+			last: '末页',
+			limits: [10, 20, 30],
+	    	layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']//自定义分页布局
+		}
+	    ,text: {
+		    none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+		  }
+	    ,cols: [[ //表头
+	      {field: 'id', title: '工单编号', fixed: 'left', width: '10%' }
+	      ,{field: 'username', title: '城市', width: '10%' }
+	      ,{field: 'sex', title: '客户类型', width: '10%'}
+	      ,{field: 'city', title: '联系人', width: '10%'} 
+	      ,{field: 'sign', title: '手机号', width: '10%'}
+	      ,{field: 'experience', title: '安装（个）', width: '10%'}
+	      ,{field: 'score', title: '提交时间', width: '10%'}
+	      ,{field: 'classify', title: '状态', width: '15%'}
+	      ,{fixed: 'right', title: '操作', align:'center', toolbar: '#toolBar', fixed: 'right', width: '15%'}
+	    ]]
+	     ,skin: 'line' //行边框风格
+		 ,even: true //开启隔行背景
+		 ,align: 'center'
+		 ,done: function(res, curr, count) {
+		 	//ajax完成后执行你需要的业务
+		 }
+		 ,id: 'reloadTable'
+		 ,where: { //设定异步数据接口的额外参数，任意设
+		   // aaaaaa: 'xxx'
+		   // ,bbb: 'yyy'
+		  }
+	  });
+	  
+	  
+	//点击按钮查询
+	  $('.search-wrap .layui-btn').on('click', function(){
+	  	 switch($(this).index()) {
+			case 0:
+			  	searchTerm.call(this);
+			  break;
+			default:
+			  resetSearch();//重置
+			}
+	  });
+	  
+	  //按条件查询
+	  function searchTerm() {
+	  	console.log(params)
+	     table.reload('reloadTable', {
+	     	where: {
+			 	beginTime: params.beginTime,
+			 	endTime: params.endTime,
+			 	customerType: params.customerType
+			 }
+	     });
+	  }
+	  
+	  //重置查询
+	  function resetSearch() {
+	  	location.reload()
+	  }
+		
+	 	//监听工具条
+		table.on('tool(layui-table)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+		  var data = obj.data; //获得当前行数据
+		  var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+		  var tr = obj.tr; //获得当前行 tr 的DOM对象
+		  if(layEvent === 'detail'){ //查看
+		    //do somehing
+		  } else if(layEvent === 'del'){ //删除
+		    layer.confirm('真的删除行么', function(index){
+		      obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+		      layer.close(index);
+		      //向服务端发送删除指令
+		    });
+		  } else if(layEvent === 'edit'){ //编辑
+		    //同步更新缓存对应的值
+		    obj.update({
+		      username: 'CQ'
+		      ,sign: 'CQ-Coder@163.comCQ-Coder@163.comCQ-Coder@163.comCQ-Coder@163.com'
+		    });
+		  }
+		});	
+		
+		
+		/* 查询条件 - 时间 */
+		var laydate = layui.laydate;
+		var startDate = laydate.render({
+			  elem: '#start-date', //指定元素
+			  type: 'datetime',
+			  format: 'yyyy-MM-dd HH:mm:ss',
+			  ready: function(date) {
+				console.log(date) 
+			  },
+			  done: function(value, date) {
+				if( value !== '' ){
+					endDate.config.min.year = date.year;
+					endDate.config.min.month = date.month - 1;
+					endDate.config.min.date = date.date;
+				}
+				params.beginTime = value || "";
+			  }
+		});
+		
+		var endDate = laydate.render({
+			  elem: '#end-date', //指定元素
+			  type: 'datetime',
+			  format: 'yyyy-MM-dd HH:mm:ss',
+			  ready: function(date) {
+				console.log(date)
+			  },
+			  done: function(value, date) {
+				if( value !== '' ){
+					startDate.config.max.year = date.year;
+					startDate.config.max.month = date.month - 1;
+					startDate.config.max.date = date.date;
+				}
+				params.endTime = value || "";
+			  }
+		});
+
 </script>
 </html>
