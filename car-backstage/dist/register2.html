@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>注册</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="front/layui/css/layui.css"/>
+	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
+	<link rel="stylesheet" href="front/css/reset.css" />
+	<link rel="stylesheet" href="front/css/common.css" />
+	<link rel="stylesheet" href="front/css/register1.css" />
+	<!-- 下面这串注释是要的(兼容ie8\9) -->
+	<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="root-wrap">
+		<div class="navbar">
+			<div class="container clearfix">
+				<a href="javascript:;" class="nav-brand"><img src="front/imgs/logo.png"></a>
+				<ul class="nav-list clearfix">
+					<li>首页</li>
+					<li>关于我们</li>
+					<li>新闻中心</li>
+					<li>产品展示</li>
+					<li>工程中心</li>
+					<li>解决方案</li>
+					<li>人力资源</li>
+				</ul>
+				<div class="nav-right">
+					<p class="tab-group clearfix">
+						<span class="tab login">登录</span>
+						<span class="tab register">注册</span>
+						<span class="tab address">上海</span>
+					</p>
+					<h3 class="tel clearfix">
+						<a href="tel:4007792088">400 7792 088</a>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="container logReg register-tip">
+				<div class="layui-fluid">
+					<div class="layui-row">
+				    	<div class="layui-col-lg5 layui-col-lg-offset3 layui-col-md5 layui-col-md-offset3 layui-col-sm5 layui-col-sm-offset2 layui-col-xs5 layui-col-xs-offset1" 
+				    		 style="margin-top:35px;position: relative;left:20px;">
+							<div class="big-title">
+								<h2 class="text-title step2">恭喜您！注册成功！</h2>
+							</div>
+							<div class="layui-block">
+								<h3 class="tips-section" style="text-align:left;"> 您的登录账号是 <span class="account">lovedeal</span> ,成为亚电集团第 <span class="num">100900</span> 位会员！</h3>
+							</div>
+							<div class="layui-block"  style="margin-top:20px;line-height: 28px;">
+								<h4 class="tips-section"> 
+									您可以在这里接入您的电话、邮件、微信、微博、表单，等客户支持渠道，
+									并让客服用工单的形式相应和管理从上述各个渠道的客户问题请求！
+								</h4>
+							</div>
+							<div class="layui-col-lg-offset4 layui-col-md-offset3 layui-col-sm-offset4 layui-col-xs-offset4" style="margin-top:35px;position: relative;left:-20px;">
+								<button class="layui-btn layui-btn-normal  layui-btn-md">完善资料</button>
+								<button class="layui-btn layui-btn-normal  layui-btn-md">开始使用</button>
+							</div>	
+							<div class="layui-block">
+								<h2 class="tips-section" style="margin-top:20px;line-height: 50px;"> 
+									<span class="time">10S</span> 之后自动跳转
+								</h2>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>	
+		</div>
+		<div class="footer index">
+			<div class="container clearfix">
+				<ul class="footer-list">
+					<li>技术研发</li>
+					<li>运行案例</li>
+					<li>交流合作</li>
+					<li>企业文化</li>
+					<li>联系我们</li>
+					<li>建议咨询</li>
+					<li>App专区</li>
+				</ul>
+				<p class="put-records">
+					<a>版权所有 2018 京ICP备17043415  北京市 通州区 徐辛庄 8号大院</a>
+				</p>
+			</div>	
+		</div>
+	</div>
+</body>
+<script src="front/js/jquery-1.7.2.min.js"></script>
+<script src="front/layui/layui.js"></script>
+<script src="front/js/jquery.slideunlock.js"></script>
+<script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+	$(".wrapper").mCustomScrollbar({
+			theme:"minimal"
+		});
+	var slider = new SliderUnlock("#slider",{
+			successLabelTip : "验证成功"
+		},function(){
+			alert("验证成功");
+    	});
+    	
+    slider.init();
+    
+     //必须在该方法下执行
+    layui.use('form', function(){
+	  var form = layui.form;
+	 	//询问框
+		layer.confirm('确认提交？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+		   //ajax
+		  layer.msg('提交成功', {icon: 0});
+		}, function(){
+			//取消做的事情
+		  layer.msg('也可以这样', {
+		    time: 20000, //20s后自动关闭
+		    btn: ['明白了', '知道了']
+		  });
+		});
+	});   
+</script>
+</html>

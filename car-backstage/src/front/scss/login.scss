@@ -1,0 +1,51 @@
+#login-wrap {
+   
+}
+.big-bg {
+       width:100%;
+       height:100%;
+       position: absolute;
+       left:0;
+       top:0;
+       bottom:0;
+       right:0;
+   }
+
+/*重写表单样式*/
+.layui-form-pane {
+    padding:45px;
+    width: 92%;
+    margin: 0 auto;
+    background:#fff;
+    .layui-form-item {
+        &:first-child {
+            padding-bottom: 25px;
+            h3 {font-size: 20px;}
+        }
+        .img-label {
+            background-repeat: no-repeat;
+            background-position: center;
+            &.user-label {
+                background-image: url(../imgs/user-icon.png) ;
+                background-size:22px;
+            }    
+            &.psw-label {
+                background-image: url(../imgs/psw-icon.png) ;
+                background-size:24px;
+            }
+        }
+        
+    }
+    
+    .layui-form-label {
+        width:90px;
+    }
+    .layui-input-block { margin-left: 90px;}
+    .layui-form-item[pane] {
+        border:none;
+         .layui-input-inline {
+          margin-left: 0px;
+        }
+    }    
+    .layui-form-checkbox {margin-left: 0px;}
+}

@@ -1,0 +1,2 @@
+@charset "UTF-8";body{background-image:url(../imgs/register-bg.jpg)}.text-title.step1:before{background:url(../imgs/register-title.png) no-repeat 0 0}.text-title.step2:before{background:url(../imgs/register-success-icon.png) no-repeat 0 0}.register-tip button{width:102px;height:30px;line-height:30px}.register-tip button:first-child{background-color:#b7d067}.register-tip button:first-child+button{background-color:rgba(0,0,0,.3)}
+/*# sourceMappingURL=maps/register1.css.map */

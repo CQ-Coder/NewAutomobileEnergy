@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>个人中心 - 维修记录</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="front/layui/css/layui.css"/>
+	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
+	<link rel="stylesheet" href="front/css/reset.css" />
+	<link rel="stylesheet" href="front/css/personCenter.css" />
+	<link rel="stylesheet" href="front/css/table-list.css" />
+	<!-- 下面这串注释是要的(兼容ie8\9) -->
+	<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+	  <div class="layui-header">
+	    <ul class="layui-nav layui-layout-right" lay-filter="navList">
+	      <li class="layui-nav-item">
+	        <a href="javascript:;">
+	          <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 
+	          	你好！CQ-Coder@163.com
+	        <span class="layui-nav-more"></span>
+	        </a>
+	        <dl class="layui-nav-child">
+	          <dd><a href="javascript:;">基本资料</a></dd>
+	          <dd><a href="javascript:;">安全设置</a></dd>
+	        </dl>
+	      </li>
+	      <li class="layui-nav-item"><a href="javascript:;">退了</a></li>
+	    </ul>
+	  </div>
+	  <div id="menu-left" class="layui-side">
+	  	<div class="logo">
+			<img src="front/imgs/personCenter-logo.png" />
+			<h3 class="energy-desc">
+				<p>亚 电 集 团</p>
+				<p>ASIA POWER GROUP</p>
+			</h3>
+		</div>
+		<div style="height:50px;background:transparent;"></div>
+	    <div class="layui-side-scroll">
+	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+	      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a class="" href="javascript:;">个人信息<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">密码修改</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">我的申请<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请安装</a></dd>
+	            <dd><a href="javascript:;">申请记录</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">报修中心<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请报修</a></dd>
+	            <dd><a href="javascript:;">报修记录</a></dd>
+	          </dl>
+	        </li>
+	      </ul>
+	  	</div>
+	  </div> 
+	  <div class="layui-body">
+		<!--<img src="front/imgs/charging-pile-question.png" style="position: absolute;width:100%;height:100%;left:0;top:0;"/>-->
+	  	<div class="body-fixw" >
+	  		<div class="body-container form apply-install-list">
+	  			<div class="big-title">
+	  				<h2 class="text-title">维修记录</h2>
+				</div>
+				<div class="search-wrap">
+					<form class="layui-form">
+						    <div class="layui-input-inline">
+						    	<label class="layui-form-label">客户类型：</label>
+						      <select name="interest" lay-filter="customerType">
+						        <option value=""></option>
+						        <option value="0">个人</option>
+						        <option value="1" selected="">车企</option>
+						        <option value="2">企业</option>
+						      </select>
+						     </div>
+					 	 	<div class="layui-inline time-line">
+						       	 <label class="layui-form-label">提交时间：</label>
+							      <div class="layui-input-inline">
+							       	 <input type="text" name="date" id="start-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+							      </div>
+						    </div>
+							 <div class="layui-inline">
+							      <div class="layui-input-inline">
+							       	<input type="text" name="date" id="end-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+							      </div>
+						    </div>
+						    <div class="layui-inline">
+					      		<a href="javascript:;" class="layui-btn layui-btn-normal search btn-8dc87d">查询</a>
+					      		<a href="javascript:;" class="layui-btn layui-btn-normal reset btn-009688">重置</a>
+						    </div>
+					 	 </div>
+					</form> 	 
+				</div> 	 
+				<table class="layui-hide" id="table" lay-filter="layui-table" ></table>
+				<div id="demo7"></div>
+				<script type="text/html" id="toolBar">
+				  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail" >查看</a>
+				  <a class="layui-btn layui-btn-xs" lay-event="edit" >编辑</a>
+				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" >删除</a>
+				</script>
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+	
+</body>
+<script src="front/js/jquery-1.7.2.min.js"></script>
+<!--  这边换了一个 引用js,不用layui.js，所以下面的写法 不用use方法 直接全局变量引用， 比如  var form = layui.form; -->
+<script src="front/layui/layui.all.js"></script>
+<script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+	var imgBg = '<img class="menu-bg" src="front/imgs/personCenter-bg2.png" />';
+	var menuBottom = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
+				"版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院    </p></div>";
+				
+	$("#menu-left").mCustomScrollbar({
+		theme:"minimal"
+	}).append($(menuBottom)).prepend($(imgBg));
+	
+	//JavaScript代码区域
+	var element = layui.element;
+	var form = layui.form;
+	
+	/*动态插入元素，比如表单内 联动省市区 ， 动态插入标签之后，就直接 form.render() 才能看到layui渲染过后的效果*/
+	
+	element.on('tab(applyTab)', function(data) {
+		console.log(data.elem)//获取当前点击的jq对象
+		console.log(data.index)//获取当前点击的tab角标
+	});
+	
+	element.on('nav(navList)', function(data) {
+		console.log(data[0].tagName)//获取当前点击原生对象
+	});
+	
+	
+	
+	/**********************************表格数据初始化***************************************/
+	var params = {
+		beginTime: "",
+	 	endTime: "",
+	 	customerType: null
+	}
+	
+	form.on('select(customerType)', function (data) {
+		console.log(data.elem); //得到select原始DOM对象
+		console.log(data.value); //得到被选中的值
+		console.log(data.name); //得到被选中的文本
+		console.log(data.othis); //得到美化后的DOM对象
+		
+		params.customerType = data.value;
+	});
+	
+	
+	var table = layui.table;
+	var laypage = layui.laypage;
+	  //第一个实例
+	  table.render({
+	    elem: '#table'
+	    ,method: 'get'
+	    ,height: 466
+	    ,url: '/data/table-data.json' //数据接口
+	    ,page: {
+			curr:  1,
+			groups: 6,
+			prev: '上一页',
+			next: '下一页',
+			first: '首页',
+			last: '末页',
+			limits: [10, 20, 30],
+	    	layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']//自定义分页布局
+		}
+	    ,text: {
+		    none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+		  }
+	    ,cols: [[ //表头
+	      {field: 'id', title: '工单编号', fixed: 'left', width: '10%' }
+	      ,{field: 'username', title: '城市', width: '10%' }
+	      ,{field: 'sex', title: '客户类型', width: '10%'}
+	      ,{field: 'city', title: '联系人', width: '10%'} 
+	      ,{field: 'sign', title: '手机号', width: '10%'}
+	      ,{field: 'experience', title: '安装（个）', width: '10%'}
+	      ,{field: 'score', title: '提交时间', width: '10%'}
+	      ,{field: 'classify', title: '状态', width: '15%'}
+	      ,{fixed: 'right', title: '操作', align:'center', toolbar: '#toolBar', fixed: 'right', width: '15%'}
+	    ]]
+	     ,skin: 'line' //行边框风格
+		 ,even: true //开启隔行背景
+		 ,align: 'center'
+		 ,done: function(res, curr, count) {
+		 	//ajax完成后执行你需要的业务
+		 }
+		 ,id: 'reloadTable'
+		 ,where: { //设定异步数据接口的额外参数，任意设
+		   // aaaaaa: 'xxx'
+		   // ,bbb: 'yyy'
+		  }
+	  });
+	  
+	  
+	//点击按钮查询
+	  $('.search-wrap .layui-btn').on('click', function(){
+	  	 switch($(this).index()) {
+			case 0:
+			  	searchTerm.call(this);
+			  break;
+			default:
+			  resetSearch();//重置
+			}
+	  });
+	  
+	  //按条件查询
+	  function searchTerm() {
+	  	console.log(params)
+	     table.reload('reloadTable', {
+	     	where: {
+			 	beginTime: params.beginTime,
+			 	endTime: params.endTime,
+			 	customerType: params.customerType
+			 }
+	     });
+	  }
+	  
+	  //重置查询
+	  function resetSearch() {
+	  	location.reload()
+	  }
+		
+	 	//监听工具条
+		table.on('tool(layui-table)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+		  var data = obj.data; //获得当前行数据
+		  var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+		  var tr = obj.tr; //获得当前行 tr 的DOM对象
+		  if(layEvent === 'detail'){ //查看
+		    //do somehing
+		  } else if(layEvent === 'del'){ //删除
+		    layer.confirm('真的删除行么', function(index){
+		      obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+		      layer.close(index);
+		      //向服务端发送删除指令
+		    });
+		  } else if(layEvent === 'edit'){ //编辑
+		    //同步更新缓存对应的值
+		    obj.update({
+		      username: 'CQ'
+		      ,sign: 'CQ-Coder@163.comCQ-Coder@163.comCQ-Coder@163.comCQ-Coder@163.com'
+		    });
+		  }
+		});	
+		
+		
+		/* 查询条件 - 时间 */
+		var laydate = layui.laydate;
+		var startDate = laydate.render({
+			  elem: '#start-date', //指定元素
+			  type: 'datetime',
+			  format: 'yyyy-MM-dd HH:mm:ss',
+			  ready: function(date) {
+				console.log(date) 
+			  },
+			  done: function(value, date) {
+				if( value !== '' ){
+					endDate.config.min.year = date.year;
+					endDate.config.min.month = date.month - 1;
+					endDate.config.min.date = date.date;
+				}
+				params.beginTime = value || "";
+			  }
+		});
+		
+		var endDate = laydate.render({
+			  elem: '#end-date', //指定元素
+			  type: 'datetime',
+			  format: 'yyyy-MM-dd HH:mm:ss',
+			  ready: function(date) {
+				console.log(date)
+			  },
+			  done: function(value, date) {
+				if( value !== '' ){
+					startDate.config.max.year = date.year;
+					startDate.config.max.month = date.month - 1;
+					startDate.config.max.date = date.date;
+				}
+				params.endTime = value || "";
+			  }
+		});
+
+</script>
+</html>
