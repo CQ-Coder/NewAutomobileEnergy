@@ -1,0 +1,91 @@
+/*表单*/
+.layui-tab-card {
+    &.out-card {
+        >.layui-tab-content {
+            > .layui-tab-item {
+                border-bottom: none;
+                padding-left:0; 
+                > .layui-row:first-child {
+                    margin-top: 26px;
+                    padding-left: 26px;
+                    background-color: #f9f9f9;
+                }
+                .tab-title {
+                    padding-left:26px;
+                    height: 50px;
+                    line-height:50px;
+                    background:red;
+                    font-size:16px;
+                    background:url(../imgs/tab-logo.png) no-repeat 0 center;
+                }
+            }
+        }
+    }
+    &.inner-card {
+        margin-left:26px;  
+        margin-right: 26px;
+         >.layui-tab-title  {
+            background-color: #fff!important;
+        }
+        >.layui-tab-content {
+            >.layui-tab-item {
+                >.layui-table {
+                    th {color:#fff;background-color:#c6c6c6;}
+                    tr {
+                        td {
+                            font-size: 13px;
+                            &:nth-child(odd) {
+                                font-weight: 550;
+                            }
+                        }    
+                    }
+                }
+                .content-title {
+                    font-size: 14px;
+                    height:38px;
+                    line-height: 38px;
+                    background-color: #c6c6c6;
+                    color:#fff;
+                    text-indent: 15px;
+                }
+                .layui-form {
+                    margin-top:20px;
+                    .layui-form-label{display:inline-block;width:120px;font-size: 13px;font-weight: 700;
+                        &.require {
+                             &:before {content: '*';color:red;display: inline-block;padding-right: 10px;}
+                        }
+                    }
+                    div.layui-input-block{
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*审核结果*/
+form.approve-result {
+    .result-content {
+        display: inline-block;
+        background-color: #f0fce2;
+        padding:14px 28px;
+        >span {
+           font-size:14px;
+           &:last-child {
+               color:#a8a8a8;
+           }
+        }
+    }
+}
+
+
+.btn-wrap {
+    a.layui-btn {
+        width:90px;border-radius: 4px;
+    }
+    .btn-sure {margin-left: 39px;}
+}
+
+
+/*查看*/

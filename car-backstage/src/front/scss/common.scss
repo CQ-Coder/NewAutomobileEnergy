@@ -20,7 +20,7 @@ body {background-color: #ecf1f5;}
             background: url(../imgs/nav-btn.png) no-repeat 0 0;
        }
     }
-    .layui-footer {left:280px;right:50px;background-color:#fff ;}
+    .layui-footer {left:280px;right:50px;text-align: right;}
     .body-fixw {min-width:950px;height: 100%;}
     .layui-nav {background-color: transparent;}
     .body-container {
@@ -131,29 +131,76 @@ body {background-color: #ecf1f5;}
     }
 }
 
- .mt_100 {margin-top:100px!important;}
- .requireStar {color:red;height: 38px; display: inline-block; line-height: 38px;}
+ .w360 {width:360px!important;}
+ .w90 {width:90px!important;}
+
+ .mt_100{margin-top:100px!important;}
+ .ml100{margin-left:100px!important;}
+ 
+.font-normal {font-weight: normal!important;}
+
  .btn-8dc87d {background:#8dc87d!important;}  
  .btn-f18282 {background:#f18282!important;}
  .btn-24a9da {background:#24a9da!important;}
  .btn-ceb44b {background:#ceb44b!important;}
- .btn-8bbc4f {background-color:#8bbc4f;}
- .btn-197d73 {background-color:#197d73;}
- .btn-009688 {background-color:#009688}
+ .btn-8bbc4f {background-color:#8bbc4f!important;}
+ .btn-197d73 {background-color:#197d73!important;}
+ .btn-009688 {background-color:#009688!important;}
+ .btn-43948d {background-color:#43948d!important;}
+ .btn-e9aa59 {background-color:#e9aa59!important;}
+ .btn-c0c0c0 {background-color:#c0c0c0!important;}
+ .text-43948d {color:#43948d!important;}
+ 
+ .top-1 {position:relative;top:-1px;}
+ 
+
+ 
+ .c-input {
+    display: inline-block;
+    &32 {
+        width:32%;
+    }
+    &74 {
+        width:74%;
+    }
+}
+
+.requireStar {color:red;height: 38px; display: inline-block; line-height: 38px;}
  
 /*重写layui 选项卡*/
-.layui-tab-card {
+.layui-tab-card{
     border-top: none;
     border-bottom: none;
     margin-bottom: 0;
-    >.layui-tab-title  {background-color:transparent;
-       li {border-radius: 10px 10px 0 0;}
+    border: none;
+    >.layui-tab-title  {
+       >li {border-radius: 10px 10px 0 0;color:#fff; margin-right: 4px;
+         .layui-tab-close:hover {
+            color:#fff;
+            background-color: transparent;
+         }
+         &.layui-this:after {
+             border:none;
+         }
+       }
     }
-    >.layui-tab-content {
-        padding:0;
-        height: auto;
-        overflow: auto;
-        background-color:#fff;
-    }
+    &.out-card {
+        >.layui-tab-content {
+            padding:0;
+            height: auto;
+            overflow: auto;
+            background-color:#fff;
+            >.layui-tab-item {
+                .state-wrap {
+                    padding:28px 35px;
+                    .layui-btn {
+                        width:140px;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+    }    
 }
+
 

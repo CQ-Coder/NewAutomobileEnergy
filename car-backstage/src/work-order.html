@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>工单管理</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="front/layui/css/layui.css"/>
+	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
+	<link rel="stylesheet" href="front/css/reset.css" />
+	<link rel="stylesheet" href="front/css/common.css" />
+	<link rel="stylesheet" href="front/css/form.css" />
+	<!-- 下面这串注释是要的(兼容ie8\9) -->
+	<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+	  <div class="layui-header">
+	  	<!-- 头部区域（可配合layui已有的水平导航） -->
+	  	<div class="nav-btn"></div>
+	    <ul class="layui-nav layui-layout-right" lay-filter="navList">
+	      <li class="layui-nav-item">
+	        <a href="javascript:;">
+	          <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 
+	          	你好！CQ-Coder@163.com
+	        <span class="layui-nav-more"></span>
+	        </a>
+	        <dl class="layui-nav-child">
+	          <dd><a href="javascript:;">基本资料</a></dd>
+	          <dd><a href="javascript:;">安全设置</a></dd>
+	        </dl>
+	      </li>
+	      <li class="layui-nav-item"><a href="javascript:;">退了</a></li>
+	    </ul>
+	  </div>
+	  <div id="menu-left" class="layui-side">
+	  	<div class="logo">
+			<img src="front/imgs/personCenter-logo.png" />
+			<h3 class="energy-desc">
+				<p>亚 电 集 团</p>
+				<p>ASIA POWER GROUP</p>
+			</h3>
+		</div>
+		<div style="height:20px;background:transparent;"></div>
+	    <div class="layui-side-scroll">
+	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+	      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+	        <li class="layui-nav-item"><a href="">首页</a></li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">安装<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请安装</a></dd>
+	            <dd><a href="javascript:;">申请记录</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a href="javascript:;">报修<span class="layui-nav-more"></span></a>
+	          <dl class="layui-nav-child">
+	            <dd><a href="javascript:;">申请报修</a></dd>
+	            <dd><a href="javascript:;">报修记录</a></dd>
+	          </dl>
+	        </li>
+	        <li class="layui-nav-item"><a href="">客户管理</a></li>
+        	<li class="layui-nav-item"><a href="">权限管理</a></li>
+        	<li class="layui-nav-item"><a href="">账号管理</a></li>
+	      </ul>
+	  	</div>
+	  </div>
+	  <div class="layui-body">
+	  	<div class="body-fixw" >
+	  		<div class="body-container">
+	  			<div class="layui-tab layui-tab-card out-card" lay-allowclose="true">
+				  <ul class="layui-tab-title">
+				    <li class="layui-this btn-43948d">工单管理</li>
+				  </ul>
+				  <div class="layui-tab-content">
+				    <div class="layui-tab-item layui-show">
+				    	<div class="layui-row">
+				    		<h4 class="tab-title">安装</h4>
+				    	</div>
+				    	<div class="layui-tab layui-tab-card inner-card">
+						  <ul class="layui-tab-title">
+						    <li class="layui-this btn-8dc87d">个人</li>
+						    <li class="btn-f18282">企业</li>
+						    <li class="btn-24a9da">车企</li>
+						    <li class="btn-ceb44b">加盟商</li>
+						  </ul>
+						  <div class="layui-tab-content">
+						    <div class="layui-tab-item layui-show">
+								<table class="layui-table" lay-even="" lay-skin="row">
+								  <colgroup>
+								    <col>
+								    <col >
+								    <col >
+								    <col>
+								  </colgroup>
+								  <thead>
+								    <tr>
+								      <th>基本信息</th>
+								      <th></th>
+								      <th>设备信息</th>
+								      <th></th>
+								    </tr> 
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <td>工单编号：</td>
+								      <td>汉族汉族汉族汉族汉汉</td>
+								      <td>到站指示牌：</td>
+								      <td>人生似修行</td>
+								    </tr>
+								    <tr>
+								      <td>城市：</td>
+								      <td>汉族</td>
+								      <td>新能源车位喷涂：</td>
+								      <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+								    </tr>
+								    <tr>
+								      <td>客户类型：</td>
+								      <td>拉丁美裔</td>
+								      <td>设备提供：</td>
+								      <td> Life is either a daring adventure or nothing.</td>
+								    </tr>
+								    <tr>
+								      <td>联系人：</td>
+								      <td>汉族</td>
+								      <td>设备型号：</td>
+								      <td>教科书再滥改，也抹不去“民族英雄”的事实</td>
+								    </tr>
+								    <tr>
+								      <td>手机号：</td>
+								      <td>华夏族（汉族）</td>
+								      <td>安装数量：</td>
+								      <td>猿强，则国强。国强，则猿更强！ </td>
+								    </tr>
+								    <tr>
+								      <td>邮箱：</td>
+								      <td>华夏族（汉族）</td>
+								      <td></td>
+								      <td> </td>
+								    </tr>
+								    <tr>
+								      <td>项目名：</td>
+								      <td>华夏族（汉族）</td>
+								      <td></td>
+								      <td> </td>
+								    </tr>
+								    <tr>
+								      <td>车型：</td>
+								      <td>华夏族（汉族）</td>
+								      <td></td>
+								      <td> </td>
+								    </tr>
+								  </tbody>
+								</table> 
+								<div class="layui-row">
+									<h2 class="content-title">信息审核</h2>
+									<!--<form class="layui-form approve" action="">
+									  <div class="layui-form-item">
+									    <label class="layui-form-label">审批结果：</label>
+									    <div class="layui-input-block">
+									      <input type="radio" name="sh" value="审核通过" title="审核通过" checked="">
+									      <input type="radio" name="sh" value="审核不通过" title="审核不通过">
+									    </div>
+									  </div>
+									  <div class="layui-form-item">
+									    <label class="layui-form-label require">项目负责人：</label>
+									    <div class="layui-input-block">
+									      <input type="text" name="title"  autocomplete="off" placeholder="" class="layui-input c-input c-input32">
+									      <a href="javascript:;" class="layui-btn layui-btn-normal btn-8dc87d w90 top-1">选择</a>
+									    </div>
+									  </div>
+									  <div class="layui-form-item">
+									    <div class="layui-input-block btn-wrap">
+									      <a href="javascript:;" class="layui-btn btn-8dc87d btn-sure">提 交</a>
+									      <a href="javascript:;" type="reset" class="layui-btn btn-cancel">取 消</a>
+									    </div>
+									  </div>
+									</form>-->
+									<form class="layui-form approve-result" action="">
+									  <div class="layui-form-item">
+									    <label class="layui-form-label">审批结果：</label>
+									    <div class="layui-input-block">
+									     	<p class="result-content">
+									     		<span>审核通过</span><br />
+									     		<span>客服<span>：</span>刘峰</span>
+									     	</p>
+									    </div>
+									  </div>
+									  <div class="layui-form-item">
+									    <label class="layui-form-label require">项目负责人：</label>
+									    <div class="layui-input-block">
+									      <input type="radio" name="sh" value="审核通过" title="审核通过" checked="">
+									      <input type="radio" name="sh" value="审核不通过" title="审核不通过"><!--
+									      
+									       <input type="text" name="title"  autocomplete="off" placeholder="" class="layui-input c-input">
+									      <a href="javascript:;" class="layui-btn layui-btn-normal btn-8dc87d w90 top-1">选择</a>-->
+									    </div>
+									  </div>
+									  <div class="layui-form-item">
+								     	<div class="layui-inline ml100">
+									      <label class="layui-form-label w90 font-normal">附件一：</label>
+									      <div class="layui-input-inline w360">
+									        <input type="text" name="title" autocomplete="off" placeholder="" class="layui-input c-input c-input74">
+								      		<a href="javascript:;" class="layui-btn layui-btn-normal btn-8dc87d w90 top-1">选择</a>
+									      </div>
+									    </div>
+									    <div class="layui-inline">
+									      <label class="layui-form-label w90 font-normal">附件二：</label>
+									      <div class="layui-input-inline w360">
+									         <input type="text" name="title"  autocomplete="off" placeholder="" class="layui-input c-input c-input74">
+								      		<a href="javascript:;" class="layui-btn layui-btn-normal btn-8dc87d w90 top-1">选择</a>
+									      </div>
+								    	</div>
+								     </div>
+									  <div class="layui-form-item">
+									    <div class="layui-input-block btn-wrap">
+									      <a href="javascript:;" class="layui-btn btn-8dc87d btn-sure">提 交</a>
+									      <a href="javascript:;" type="reset" class="layui-btn btn-cancel">取 消</a>
+									    </div>
+									  </div>
+									</form>
+								</div>
+						    </div>
+						    <div class="layui-tab-item">2</div>
+						    <div class="layui-tab-item">3</div>
+						    <div class="layui-tab-item">4</div>
+						    <div class="layui-tab-item">5</div>
+						    <div class="layui-tab-item">6</div>
+						  </div>
+						</div>
+				      <!--<div style="width:4000px;background-color: red;height:20px;">xxxxxxxxxxxxxxxxxx</div>-->
+				    </div>
+				  </div>
+	  		</div>
+	  	</div>
+	  </div>
+	<div class="layui-footer text-43948d ">版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院 </div>
+	</div>
+</body>
+<script src="front/js/plugins/jquery-1.7.2.min.js"></script>
+<script src="front/layui/layui.all.js"></script>
+<script src="front/js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="front/js/common.js"></script>
+<script>
+	$("#menu-left").mCustomScrollbar({
+		theme:"minimal"
+	});
+	
+	//JavaScript代码区域
+	var element = layui.element;
+	var form = layui.form;
+	
+	/*动态插入元素，比如表单内 联动省市区 ， 动态插入标签之后，就直接 form.render() 才能看到layui渲染过后的效果*/
+	
+	element.on('tab(applyTab)', function(data) {
+		console.log(data.elem)//获取当前点击的jq对象
+		console.log(data.index)//获取当前点击的tab角标
+	});
+	
+	element.on('nav(navList)', function(data) {
+		console.log(data[0].tagName)//获取当前点击原生对象
+	});
+	
+	/**********************************表格数据初始化***************************************/
+	var params = {
+		beginTime: "",
+	 	endTime: "",
+	 	customerType: null
+	}
+	
+	form.on('select(customerType)', function (data) {
+		console.log(data.elem); //得到select原始DOM对象
+		console.log(data.value); //得到被选中的值
+		console.log(data.name); //得到被选中的文本
+		console.log(data.othis); //得到美化后的DOM对象
+		
+		params.customerType = data.value;
+	});
+	
+	
+	var table = layui.table;
+	var laypage = layui.laypage;
+	  //第一个实例
+	  table.render({
+	    elem: '#table'
+	    ,method: 'get'
+	    ,height: 466
+	    ,url: '/data/table-data.json' //数据接口
+	    ,page: {
+			curr:  1,
+			groups: 6,
+			prev: '上一页',
+			next: '下一页',
+			first: '首页',
+			last: '末页',
+			limits: [10, 20, 30],
+	    	layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']//自定义分页布局
+		}
+	    ,text: {
+		    none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+		  }
+	    ,cols: [[ //表头
+	      {field: 'id', title: '工单编号', fixed: 'left', width: '10%' }
+	      ,{field: 'username', title: '城市', width: '10%' }
+	      ,{field: 'sex', title: '客户类型', width: '10%'}
+	      ,{field: 'city', title: '联系人', width: '10%'} 
+	      ,{field: 'sign', title: '手机号', width: '10%'}
+	      ,{field: 'experience', title: '安装（个）', width: '10%'}
+	      ,{field: 'score', title: '提交时间', width: '10%'}
+	      ,{field: 'classify', title: '状态', width: '15%'}
+	      ,{fixed: 'right', title: '操作', align:'center', toolbar: '#toolBar', fixed: 'right', width: '15%'}
+	    ]]
+	     ,skin: 'line' //行边框风格
+		 ,even: true //开启隔行背景
+		 ,align: 'center'
+		 ,done: function(res, curr, count) {
+		 	//ajax完成后执行你需要的业务
+		 }
+		 ,id: 'reloadTable'
+		 ,where: { //设定异步数据接口的额外参数，任意设
+		   // aaaaaa: 'xxx'
+		   // ,bbb: 'yyy'
+		  }
+	  });
+	  
+	  
+	//点击按钮查询
+	  $('.search-wrap .layui-btn').on('click', function(){
+	  	 switch($(this).index()) {
+			case 0:
+			  	searchTerm.call(this);
+			  break;
+			default:
+			  resetSearch();//重置
+			}
+	  });
+	  
+	  //按条件查询
+	  function searchTerm() {
+	  	console.log(params)
+	     table.reload('reloadTable', {
+	     	where: {
+			 	beginTime: params.beginTime,
+			 	endTime: params.endTime,
+			 	customerType: params.customerType
+			 }
+	     });
+	  }
+	  
+	  //重置查询
+	  function resetSearch() {
+	  	location.reload()
+	  }
+		
+	 	//监听工具条
+		table.on('tool(layui-table)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+		  var data = obj.data; //获得当前行数据
+		  var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+		  var tr = obj.tr; //获得当前行 tr 的DOM对象
+		  if(layEvent === 'detail'){ //查看
+		  	
+		  	var index = layer.open({
+			  type: 2, 
+			  content: 'apply-install.html' //这里content是一个普通的String
+			});
+			layer.full(index);
+		    //do somehing
+		  } else if(layEvent === 'del'){ //删除
+		    layer.confirm('真的删除行么', function(index){
+		      obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+		      layer.close(index);
+		      //向服务端发送删除指令
+		    });
+		  } else if(layEvent === 'edit'){ //编辑
+		    //同步更新缓存对应的值
+		    obj.update({
+		      username: 'CQ'
+		      ,sign: 'CQ-Coder@163.comCQ-Coder@163.comCQ-Coder@163.comCQ-Coder@163.com'
+		    });
+		  }
+		});	
+		
+		/* 查询条件 - 时间 */
+		var laydate = layui.laydate;
+		var startDate = laydate.render({
+			  elem: '#start-date', //指定元素
+			  type: 'datetime',
+			  format: 'yyyy-MM-dd HH:mm:ss',
+			  ready: function(date) {
+				console.log(date) 
+			  },
+			  done: function(value, date) {
+				if( value !== '' ){
+					endDate.config.min.year = date.year;
+					endDate.config.min.month = date.month - 1;
+					endDate.config.min.date = date.date;
+				}
+				params.beginTime = value || "";
+			  }
+		});
+		
+		var endDate = laydate.render({
+			  elem: '#end-date', //指定元素
+			  type: 'datetime',
+			  format: 'yyyy-MM-dd HH:mm:ss',
+			  ready: function(date) {
+				console.log(date)
+			  },
+			  done: function(value, date) {
+				if( value !== '' ){
+					startDate.config.max.year = date.year;
+					startDate.config.max.month = date.month - 1;
+					startDate.config.max.date = date.date;
+				}
+				params.endTime = value || "";
+			  }
+		});
+</script>
+</html>

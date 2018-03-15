@@ -1,5 +1,5 @@
 $(function() {
-	$(".layui-tab-content").css({"height": $(".layui-body").height() - 39 +"px"})//处理右侧内容高度超出滚动样式
+	$(".out-card > .layui-tab-content").css({"height": $(".layui-body").height() - 39 +"px"})//处理右侧内容高度超出滚动样式
 })
 
 var contrlMenuShow = (function() {

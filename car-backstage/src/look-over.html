@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>个人中心 - 申请安装</title>
+	<title>查看</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="front/layui/css/layui.css"/>
 	<link rel="stylesheet" href="front/css/jquery.mCustomScrollbar.css"/>
 	<link rel="stylesheet" href="front/css/reset.css" />
-	<link rel="stylesheet" href="front/css/personCenter.css" />
-	<link rel="stylesheet" href="front/css/table-list.css" />
+	<link rel="stylesheet" href="front/css/common.css" />
+	<link rel="stylesheet" href="front/css/form.css" />
 	<!-- 下面这串注释是要的(兼容ie8\9) -->
 	<!--[if lt IE 9]>
 	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -18,6 +18,8 @@
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
 	  <div class="layui-header">
+	  	<!-- 头部区域（可配合layui已有的水平导航） -->
+	  	<div class="nav-btn"></div>
 	    <ul class="layui-nav layui-layout-right" lay-filter="navList">
 	      <li class="layui-nav-item">
 	        <a href="javascript:;">
@@ -41,94 +43,73 @@
 				<p>ASIA POWER GROUP</p>
 			</h3>
 		</div>
-		<div style="height:50px;background:transparent;"></div>
+		<div style="height:20px;background:transparent;"></div>
 	    <div class="layui-side-scroll">
 	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
 	      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+	        <li class="layui-nav-item"><a href="">首页</a></li>
 	        <li class="layui-nav-item layui-nav-itemed">
-	          <a class="" href="javascript:;">个人信息<span class="layui-nav-more"></span></a>
-	          <dl class="layui-nav-child">
-	            <dd><a href="javascript:;">密码修改</a></dd>
-	          </dl>
-	        </li>
-	        <li class="layui-nav-item layui-nav-itemed">
-	          <a href="javascript:;">我的申请<span class="layui-nav-more"></span></a>
+	          <a href="javascript:;">安装<span class="layui-nav-more"></span></a>
 	          <dl class="layui-nav-child">
 	            <dd><a href="javascript:;">申请安装</a></dd>
 	            <dd><a href="javascript:;">申请记录</a></dd>
 	          </dl>
 	        </li>
 	        <li class="layui-nav-item layui-nav-itemed">
-	          <a href="javascript:;">报修中心<span class="layui-nav-more"></span></a>
+	          <a href="javascript:;">报修<span class="layui-nav-more"></span></a>
 	          <dl class="layui-nav-child">
 	            <dd><a href="javascript:;">申请报修</a></dd>
 	            <dd><a href="javascript:;">报修记录</a></dd>
 	          </dl>
 	        </li>
+	        <li class="layui-nav-item"><a href="">客户管理</a></li>
+        	<li class="layui-nav-item"><a href="">权限管理</a></li>
+        	<li class="layui-nav-item"><a href="">账号管理</a></li>
 	      </ul>
 	  	</div>
-	  </div> 
+	  </div>
 	  <div class="layui-body">
-		<!--<img src="front/imgs/charging-pile-question.png" style="position: absolute;width:100%;height:100%;left:0;top:0;"/>-->
 	  	<div class="body-fixw" >
-	  		<div class="body-container form apply-install-list">
-	  			<div class="big-title">
-	  				<h2 class="text-title">申请记录</h2>
-				</div>
-				<div class="search-wrap">
-					<form class="layui-form">
-						    <div class="layui-input-inline">
-						    	<label class="layui-form-label">客户类型：</label>
-						      <select name="interest" lay-filter="customerType">
-						        <option value=""></option>
-						        <option value="0">个人</option>
-						        <option value="1" selected="">车企</option>
-						        <option value="2">企业</option>
-						      </select>
-						     </div>
-					 	 	<div class="layui-inline time-line">
-						       	 <label class="layui-form-label">提交时间：</label>
-							      <div class="layui-input-inline">
-							       	 <input type="text" name="date" id="start-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-							      </div>
+	  		<div class="body-container">
+	  			<div class="layui-tab layui-tab-card out-card" lay-allowclose="true">
+				  <ul class="layui-tab-title">
+				    <li class="layui-this btn-43948d">工单管理</li>
+				  </ul>
+				  <div class="layui-tab-content">
+				    <div class="layui-tab-item layui-show">
+				    	<div class="layui-row">
+				    		<h4 class="tab-title">查看</h4>
+				    	</div>
+				        <form class="layui-form" action="">
+						  <div class="layui-form-item">
+						    <label class="layui-form-label">单行输入框</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
 						    </div>
-							 <div class="layui-inline">
-							      <div class="layui-input-inline">
-							       	<input type="text" name="date" id="end-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-							      </div>
+						  </div>
+						  <div class="layui-form-item">
+						    <label class="layui-form-label">验证必填项</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
 						    </div>
-						    <div class="layui-inline">
-					      		<a href="javascript:;" class="layui-btn layui-btn-normal search btn-8dc87d">查询</a>
-					      		<a href="javascript:;" class="layui-btn layui-btn-normal reset btn-009688">重置</a>
-						    </div>
-					 	 </div>
-					</form> 	 
-				</div> 	 
-				<table class="layui-hide" id="table" lay-filter="layui-table" ></table>
-				<!--<div id="demo7"></div>-->
-				<script type="text/html" id="toolBar">
-				  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail" >查看</a>
-				  <a class="layui-btn layui-btn-xs" lay-event="edit" >编辑</a>
-				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" >删除</a>
-				</script>
+						  </div>
+						</form>  
+				    </div>
+				  </div>
+	  			</div>
 	  		</div>
 	  	</div>
-	  </div>
+		<div class="layui-footer text-43948d ">版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院 </div>
 	</div>
-	
 </body>
-<script src="front/js/jquery-1.7.2.min.js"></script>
-<!--  这边换了一个 引用js,不用layui.js，所以下面的写法 不用use方法 直接全局变量引用， 比如  var form = layui.form; -->
+<script src="front/js/plugins/jquery-1.7.2.min.js"></script>
 <script src="front/layui/layui.all.js"></script>
-<script src="front/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="front/js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="front/js/common.js"></script>
 <script>
-	var imgBg = '<img class="menu-bg" src="front/imgs/personCenter-bg2.png" />';
-	var menuBottom = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
-				"版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院    </p></div>";
-				
 	$("#menu-left").mCustomScrollbar({
 		theme:"minimal"
-	}).append($(menuBottom)).prepend($(imgBg));
+	});
 	
 	//JavaScript代码区域
 	var element = layui.element;
@@ -144,8 +125,6 @@
 	element.on('nav(navList)', function(data) {
 		console.log(data[0].tagName)//获取当前点击原生对象
 	});
-	
-	
 	
 	/**********************************表格数据初始化***************************************/
 	var params = {
@@ -266,7 +245,6 @@
 		  }
 		});	
 		
-		
 		/* 查询条件 - 时间 */
 		var laydate = layui.laydate;
 		var startDate = laydate.render({
@@ -302,6 +280,5 @@
 				params.endTime = value || "";
 			  }
 		});
-		
 </script>
 </html>
