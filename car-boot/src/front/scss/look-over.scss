@@ -1,0 +1,49 @@
+/**/
+.layui-layout-admin  {
+    .layui-body{
+        overflow: hidden;
+        left: 376px;
+        bottom: 60px;
+        right: 50px;
+        top: 90px;
+        .look-over {
+            >.layui-row {
+                &:first-child { padding-left: 26px; background-color: #67a8a2;}
+                color:#fff;
+                .tab-title {
+                    padding-left: 26px;
+                    height: 50px;
+                    line-height: 50px;
+                    background: red;
+                    font-size: 16px;
+                    background: url(../imgs/tab-logo.png) no-repeat 0 center;
+                }
+                .content-title {
+                    font-size: 14px;
+                    height: 38px;
+                    line-height: 38px;
+                    background-color: #c6c6c6;
+                    color: #fff;
+                    text-indent: 15px;
+                }
+                .main-content {
+                    padding-left:84px;
+                    padding-top:30px;
+                    .layui-btn {
+                        width:102px;
+                        height:30px;
+                        line-height: 30px;
+                        border-radius:5px;
+                        
+                    }
+                    .btn-back {
+                        height:38px;
+                        line-height:38px;
+                    }
+                }
+            }    
+        }    
+    }
+}
+
+.layui-table {margin-top:20px;}

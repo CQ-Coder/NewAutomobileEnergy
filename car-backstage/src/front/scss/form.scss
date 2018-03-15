@@ -81,11 +81,32 @@ form.approve-result {
 
 
 .btn-wrap {
-    a.layui-btn {
-        width:90px;border-radius: 4px;
-    }
+    a.layui-btn { width:90px;border-radius: 4px; }
     .btn-sure {margin-left: 39px;}
 }
 
 
 /*查看*/
+.look-over {
+    .layui-form {
+        margin-top:40px;
+        padding: 0 40px;
+    }
+    .layui-form-label {
+        font-size:16px;
+    }
+    .layui-input-block {
+        line-height:38px;
+        font-size:16px;
+        color:#666666;
+    }
+    .back {border-radius: 4px;padding:0 33px; margin:58px 0;width:140px;}
+    .btn-notice {
+        width:94px;
+        height:30px;
+        line-height:30px;
+        &:first-child {
+            padding: 0 33px; 
+        }
+    }    
+}

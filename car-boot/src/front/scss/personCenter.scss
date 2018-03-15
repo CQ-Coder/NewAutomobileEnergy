@@ -48,6 +48,7 @@
             padding: 0 114px;
             padding-right: 30px;
             background:url(../imgs/menu-userinfo.png) no-repeat 74px center;
+            background-color: rgba(0,0,0,.3)!important;
             &:hover {
                 background:#fff;
                  color: #007ddb!important;
@@ -112,7 +113,10 @@
     }
 }
 
+.layui-nav-itemed .layui-nav-child {background-color:transparent!important;}
+
  .mt_100 {margin-top:100px!important;}
+ .mt40 {margin-top:40px!important;}
  .requireStar {color:red;height: 38px; display: inline-block; line-height: 38px;}
  .btn-8dc87d {background:#8dc87d!important;}  
  .btn-f18282 {background:#f18282!important;}
@@ -121,6 +125,19 @@
  .btn-8bbc4f {background-color:#8bbc4f;}
  .btn-197d73 {background-color:#197d73;}
  .btn-009688 {background-color:#009688}
+ .btn-8cbd50 {background-color:#8cbd50;}
+ .btn-c6c6c6 {background-color:#c6c6c6;}
+ 
+.btn-approve {background-color:#e9aa59;color:#fff;} /*审批  - 黄色*/
+.btn-prospect {background-color:#8ec87e;color:#fff;}/*勘察  - 绿色*/
+.btn-budget {background-color:#f28281;color:#fff;}/*预算  - 粉红色*/
+.btn-contract {background-color:#25a9da;color:#fff;}/*签约  - 粉红色*/
+.btn-roadwork {background-color:#cfb44b;color:#fff;}/*施工  - 土黄色*/
+.btn-accpet {background-color:#28a296;color:#fff;}/*验收  - 深绿色*/
+.btn-pay {background-color:#c58ac2;color:#fff;}/*付款  - 紫色*/
+.btn-success {background-color:#c58ac2;color:#fff;}/*完成  - 省绿色*/
+.btn-disabled {background-color:#c6c6c6;color:#fff;}/*完成  - */
+ 
  
 /* -------- 主标题  -------- */
 .layui-layout-admin {
@@ -138,5 +155,29 @@
             background:url(../imgs/apply-install.png) no-repeat 0 0;
             }
         }
+    }
+}
+
+
+.add-wrap {
+    padding-left: 38px;
+    background-color: #66a8a2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    .btn-add {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        text-align: center;
+        color:#66a8a2;
+        cursor: pointer;
+    }
+    .btn-desc {
+        font-size: 18px;
+        color: #fff;
+        margin-left: 20px;
+        vertical-align: middle;
     }
 }

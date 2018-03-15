@@ -75,24 +75,43 @@
 				  <ul class="layui-tab-title">
 				    <li class="layui-this btn-43948d">工单管理</li>
 				  </ul>
-				  <div class="layui-tab-content">
+				  <div class="layui-tab-content look-over">
 				    <div class="layui-tab-item layui-show">
 				    	<div class="layui-row">
 				    		<h4 class="tab-title">查看</h4>
 				    	</div>
 				        <form class="layui-form" action="">
 						  <div class="layui-form-item">
-						    <label class="layui-form-label">单行输入框</label>
+						    <label class="layui-form-label">通知时间：</label>
 						    <div class="layui-input-block">
-						      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+						    	2018-02-13 17:15:23
 						    </div>
 						  </div>
 						  <div class="layui-form-item">
-						    <label class="layui-form-label">验证必填项</label>
+						    <label class="layui-form-label">标&emsp;&emsp;题：</label>
 						    <div class="layui-input-block">
-						      <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+						      	公布个人年度账单，公共桩平均使用率达47%
 						    </div>
 						  </div>
+						  <div class="layui-form-item">
+						    <label class="layui-form-label">内&emsp;&emsp;容：</label>
+						    <div class="layui-input-block content">
+						      	春节前，“安悦充电”APP发布了《2017安悦充电个人年度账单》，这份账单向用户展示了安悦充电的布桩情况。截止2017年，安悦充电投放各类充电桩38641根，总装机功率达24万千瓦，在全国建设了公共充电桩12671根，充电站点1203个。同时，该账单也公布了
+								安悦充电公共桩的平均使用率达47%，每天平均充电时长2.45小时。两年下来，随着充电站点数量的增加，许多车主都养成了有规律的充电出行习惯。<br/><br/>
+								此外，和支付宝、微信账单一样，使用我们“安悦充电”APP的新能源车主可了解到自己的充电习惯，包括全年充电电量、充电次数、充电时间段的选择、充电站点偏好等。车主可以从账单中了解到自己一年的充电量减少了多少碳排放量，相当于可购买多少杯星巴克咖啡。这样直观的数据，让车主清晰了解到自己为节能减排做了多少贡献。
+						    </div>
+						  </div>
+						  <div class="layui-form-item">	
+						    <label class="layui-form-label">通知对象：</label>
+						    <div class="layui-input-block">
+						      	 <a href="javascript:;" class="layui-btn btn-9fc771 btn-notice">客服</a>
+						      	 <a href="javascript:;" class="layui-btn btn-9fc771 btn-notice">项目经理</a> 
+						      	 <a href="javascript:;" class="layui-btn btn-9fc771 btn-notice">工程人员</a>
+						    </div>
+						  </div>
+					    	<div class="layui-row">
+					    	 	<a href="javascript:;" class="layui-btn back btn-43948d">返     回</a>
+					    	</div>
 						</form>  
 				    </div>
 				  </div>
@@ -138,7 +157,6 @@
 		console.log(data.value); //得到被选中的值
 		console.log(data.name); //得到被选中的文本
 		console.log(data.othis); //得到美化后的DOM对象
-		
 		params.customerType = data.value;
 	});
 	
