@@ -1,0 +1,48 @@
+.layui-header, .layui-body, .body-fixw {background-color: #fafbfd!important;}
+.layui-table-view {min-width:954px!important;}
+.layui-box  {width:100%;}
+.layui-table-cell >.layui-btn{
+    border-radius: 4px;
+    &:first-child  {
+        background-color:#8cbd50;color:#fff;border: none;
+    }
+} 
+
+.layui-table-view {
+    margin-left:35px;
+    .layui-table  {
+        th {
+            background-color:#67a8a2;
+            color:#fff;s
+            border-right: 1px solid #fff!important;
+            text-align: center;
+        }
+        td {
+           text-align: center; 
+        }    
+    }
+}    
+
+.search-wrap{
+    margin-left: 35px;
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color: #f9f8f6;
+    .layui-input-inline:first-child > label {
+        padding-left: 0;
+        padding-right: 0px;
+    }
+    label {font-size: 13px;}
+    .time-line > label {
+        width: 70px;
+    }
+    .layui-inline {margin-left: 15px;}
+    .layui-form-select {display: inline-block;}
+    .layui-btn {width:95px;border-radius: 4px;}
+}
+
+/*分页*/
+.layui-table-page {
+    .layui-laypage span.layui-laypage-count { margin-right: calc(100% - 565px);}
+    .layui-laypage-limits select {color:#43948d!important;}
+}
