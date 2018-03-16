@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
 	<title>个人中心 - 申请安装</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="front/layui/css/layui.css"/>
@@ -77,9 +78,9 @@
 	  			<div id="containerTab" class="layui-tab" lay-filter="applyTab">
 				  <ul class="layui-tab-title">
 				    <li class="layui-this"><button class="layui-btn layui-btn-normal layui-btn-radius btn-8dc87d">个人</button></li>
-				    <li><button class="layui-btn layui-btn-normal layui-btn-radius btn-c6c6c6">企业</button></li><!-- btn-f18282 -->
-				    <li><button class="layui-btn layui-btn-normal layui-btn-radius btn-c6c6c6">车企</button></li><!-- btn-24a9da-->
-				    <li><button class="layui-btn layui-btn-normal layui-btn-radius btn-c6c6c6">加盟商</button></li><!-- btn-ceb44b-->
+				    <li><button class="layui-btn layui-btn-normal layui-btn-radius btn-f18282 btn-c6c6c6">企业</button></li>
+				    <li><button class="layui-btn layui-btn-normal layui-btn-radius btn-24a9da btn-c6c6c6">车企</button></li>
+				    <li><button class="layui-btn layui-btn-normal layui-btn-radius btn-ceb44b btn-c6c6c6">加盟商</button></li>
 				  </ul>
 				  <div class="layui-tab-content">
 				    <div class="layui-tab-item layui-show">
@@ -207,18 +208,130 @@
 							      <span class="requireStar">*</span>
 							    </div>
 							</div>
-							<div class="layui-form-item">
-								<div class="add-wrap">
-									<span class="btn-add">+</span>
+							<div class="layui-form-item ">
+								<div class="btn-flex-wrap">
+									<span class="btn-flex btn-flex1">+</span>
 									<span class="btn-desc">设备信息</span>
 								</div>
 							</div>
+							<div class="section"  style="display: none;">
+								 <div class="layui-form-item">
+								    <label class="layui-form-label">场站属性：</label>
+								     <div class="layui-input-block">
+								      <select name="quiz1">
+								        <option value="">请选择省</option>
+								        <option value="浙江" selected=""></option>
+								        <option value="你的工号">浙江省浙江省</option>
+								        <option value="你最喜欢的老师">浙江省浙江浙江省省</option>
+								      </select>
+								    </div>
+								  </div>
+								<div class="layui-form-item">
+								    <label class="layui-form-label">电源点归属：</label>
+								     <div class="layui-input-block">
+								      <select name="quiz1">
+								        <option value="">请选择省</option>
+								        <option value="浙江" selected=""></option>
+								        <option value="你的工号">浙江省浙江省</option>
+								        <option value="你最喜欢的老师">浙江省浙江浙江省省</option>
+								      </select>
+								    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <label class="layui-form-label">电力接入方式：</label>
+								     <div class="layui-input-block">
+								      <select name="quiz1">
+								        <option value="">请选择省</option>
+								        <option value="浙江" selected=""></option>
+								        <option value="你的工号">浙江省浙江省</option>
+								        <option value="你最喜欢的老师">浙江省浙江浙江省省</option>
+								      </select>
+								    </div>
+								  </div>
+								   <div class="layui-form-item">
+								    <label class="layui-form-label">用户提供电源容量：</label>
+								      <div class="layui-input-block">
+									      <input type="text" name="" autocomplete="off" placeholder="请输入电源容量" class="layui-input c-input">
+									      <span class="requireStar">*</span>
+									    </div>
+								  </div>
+								<div class="layui-form-item">
+								    <label class="layui-form-label">路由长度：</label>
+								    <div class="layui-input-block">
+								      <input type="text" name="" autocomplete="off" placeholder="请输入路由长度" class="layui-input c-input">
+								      <span class="requireStar">*</span>
+								    </div>
+								</div>
+								<div class="layui-form-item">
+								    <label class="layui-form-label">上线时间：</label>
+								    <div class="layui-input-block">
+								    	<input type="text" name="date" id="onlineDate" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input c-input">
+								      	<span class="requireStar">*</span>
+								    </div>
+								</div>
+								<div class="layui-form-item">
+								    <label class="layui-form-label">需破路面：</label>
+								     <div class="layui-input-block">
+								      <select name="quiz1">
+								        <option value="">请选择省</option>
+								        <option value="浙江" selected=""></option>
+								        <option value="你的工号">浙江省浙江省</option>
+								        <option value="你最喜欢的老师">浙江省浙江浙江省省</option>
+								      </select>
+								    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <label class="layui-form-label">开关上口电源：</label>
+								     <div class="layui-input-block">
+								      <select name="quiz1">
+								        <option value="">请选择省</option>
+								        <option value="浙江" selected=""></option>
+								        <option value="你的工号">浙江省浙江省</option>
+								        <option value="你最喜欢的老师">浙江省浙江浙江省省</option>
+								      </select>
+								    </div>
+								  </div>
+							</div>	
 							<div class="layui-form-item">
-								<div class="add-wrap">
-									<span class="btn-add">+</span>
+								<div class="btn-flex-wrap">
+									<span class="btn-flex btn-flex2">+</span>
 									<span class="btn-desc">场站信息</span>
 								</div>
 							</div>
+							<div class="section" style="display: none;">
+								 <div class="layui-form-item">
+								    <label class="layui-form-label">项目所在地址：</label>
+								      <div class="layui-input-block">
+									      <input type="text" name="" autocomplete="off" placeholder="请输入项目所在地址" class="layui-input c-input">
+									      <span class="requireStar">*</span>
+									    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <div class="layui-inline">
+								      <label class="layui-form-label">日期：</label>
+								      <div class="layui-input-inline">
+								        <input type="text" name="date" id="star" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+								      </div>
+								      <label class="layui-form-label w20">至</label>
+								      <div class="layui-input-inline ml14">
+								        <input type="text" name="date" id="end" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+								      </div>
+								    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <label class="layui-form-label">营销部审批意见：</label>
+								      <div class="layui-input-block">
+									      <input type="text" name="" autocomplete="off" placeholder="请输入项目所在地址" class="layui-input c-input">
+									      <span class="requireStar">*</span>
+									    </div>
+								  </div>
+								   <div class="layui-form-item layui-form-text">
+								    <label class="layui-form-label">营销部审批意见：</label>
+								    <div class="layui-input-block">
+								      <textarea placeholder="请输入内容" class="layui-textarea c-input"></textarea>
+								    </div>
+								  </div>
+							</div>	
 							<div class="layui-form-item">
 							    <div class="layui-input-block">
 							      <a class="layui-btn btn-sure c-button btn-8bbc4f">确定</a>
@@ -255,15 +368,23 @@
 	//JavaScript代码区域
 	var element = layui.element;
 	var form = layui.form;
+	var laydate = layui.laydate;
 	
 	/*动态插入元素，比如表单内 联动省市区 ， 动态插入标签之后，就直接 form.render() 才能看到layui渲染过后的效果*/
 	
-	//element.render('nav', 'test1');
+	laydate.render({
+	    elem: '#onlineDate'
+	 });
+	  laydate.render({
+	    elem: '#star'
+	  });
+	  laydate.render({
+	    elem: '#end'
+	  });
 	
-	element.on('tab(applyTab)', function(data) {
-		console.log(data.elem)//获取当前点击的jq对象
-		console.log(data.index)//获取当前点击的tab角标
-	});
+	$(".layui-tab-title").on("click", ".layui-btn", function() {
+		$(this).removeClass("btn-c6c6c6").closest("li").siblings("li").find(".layui-btn").addClass("btn-c6c6c6");
+	})
 	
 	element.on('nav(navList)', function(data) {
 		console.log(data[0].tagName)//获取当前点击原生对象
@@ -272,7 +393,6 @@
 	//JavaScript代码区域
 	layui.use('element', function(){
 	  var element = layui.element;
-	  
 	});
 	
 	form.on('radio(brand)', function(data){
@@ -309,5 +429,32 @@
 			return cache[args] = showCurTabList.apply(null, arguments);
 		}
 	})();
+	
+	
+	/*切换显示隐藏*/
+	var FlexContent = function(flag, $obj) {
+		this.flag = flag;
+		this.$obj = $obj;
+	}
+	FlexContent.prototype.ctrlContentShow = function() {
+		if(this.flag) {
+			this.$obj.closest(".layui-form-item").next().show();
+			this.$obj.text("-");
+		} else {
+			this.$obj.closest(".layui-form-item").next().hide();
+			this.$obj.text("+");
+		}
+		this.flag = !this.flag;
+	}
+	var F1 = new FlexContent(true, $(".btn-flex1"));
+	var F2 = new FlexContent(true, $(".btn-flex2"));
+
+	$(".btn-flex1").on("click", function() {
+		F1.ctrlContentShow();
+	})
+	
+	$(".btn-flex2").on("click", function() {
+		F2.ctrlContentShow();
+	})
 </script>
 </html>

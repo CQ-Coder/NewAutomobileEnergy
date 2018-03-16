@@ -108,6 +108,11 @@
 				<table class="layui-hide" id="table" lay-filter="layui-table" ></table>
 				<!--<div id="demo7"></div>-->
 				<script type="text/html" id="toolBar">
+					{{#  if(fn(d)){ }}
+					  开始日期：
+					{{#  } else { }}
+					  已截止
+					{{#  } }}   
 				  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail" >查看</a>
 				  <a class="layui-btn layui-btn-xs" lay-event="edit" >编辑</a>
 				  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" >删除</a>
@@ -116,7 +121,6 @@
 	  	</div>
 	  </div>
 	</div>
-	
 </body>
 <script src="front/js/jquery-1.7.2.min.js"></script>
 <!--  这边换了一个 引用js,不用layui.js，所以下面的写法 不用use方法 直接全局变量引用， 比如  var form = layui.form; -->
@@ -126,6 +130,11 @@
 	var imgBg = '<img class="menu-bg" src="front/imgs/personCenter-bg2.png" />';
 	var menuBottom = "<div class='menu-bottom' style='height:15%;'><h3><span>关注我们</span><i></i><i></i></h3><p>"+
 				"版权所有 2018 京ICP备17043415北京市 通州区 徐辛庄 8号大院    </p></div>";
+	
+	//逻辑处理
+	function fn(d) {
+		console.log(d.id)
+	}
 				
 	$("#menu-left").mCustomScrollbar({
 		theme:"minimal"
@@ -134,6 +143,7 @@
 	//JavaScript代码区域
 	var element = layui.element;
 	var form = layui.form;
+	var laytpl = layui.laytpl;
 	
 	/*动态插入元素，比如表单内 联动省市区 ， 动态插入标签之后，就直接 form.render() 才能看到layui渲染过后的效果*/
 	
@@ -145,7 +155,6 @@
 	element.on('nav(navList)', function(data) {
 		console.log(data[0].tagName)//获取当前点击原生对象
 	});
-	
 	
 	
 	/**********************************表格数据初始化***************************************/

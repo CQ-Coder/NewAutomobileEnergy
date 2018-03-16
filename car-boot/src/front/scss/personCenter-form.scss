@@ -56,11 +56,22 @@
             }
         }
     }
-    .layui-form-label {width:130px;font-size:16px;}
+    
+    .layui-form-label {width:150px;font-size:16px;}
     .layui-tab-content {margin-top:20px;}
-    .layui-input-block {margin-left:150px;}
+    .layui-input-block {margin-left:150px;
+            .layui-form-select {
+                .layui-input {
+                     width:90%;
+                }
+                .layui-edge {
+                    right:30px;
+                }
+                dl.layui-anim { left:30px; }
+            }
+    }
     .layui-input, .layui-select, .layui-textarea {font-size:14px;}
-    .c-input{ width:95%;display: inline-block;
+    .c-input{ width:90%;display: inline-block;
         &+.requireStar {margin-left:5px;}
     }
     .btn-sure {margin-left: 110px;}
