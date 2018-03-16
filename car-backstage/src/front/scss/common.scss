@@ -16,7 +16,7 @@ body {background-color: #ecf1f5;}
             display: block;
             position: absolute;
             left: 280px;
-            margin-top:20px;
+            margin-top: 30px;
             background: url(../imgs/nav-btn.png) no-repeat 0 0;
        }
     }
@@ -44,7 +44,7 @@ body {background-color: #ecf1f5;}
      .layui-header {
             .layui-nav-item {
                  > a {
-                     color:#000;
+                     color:#fff;
                  }
             }
             .layui-nav {
@@ -63,9 +63,8 @@ body {background-color: #ecf1f5;}
         .layui-nav-tree .layui-nav-item > a {
             padding: 0 90px;
             padding-right: 40px;
-            background: url(../imgs/menu-userinfo.png) no-repeat 55px center;
+            font-size: 18px;
             &:hover {
-                background:#fff;
                  color: #007ddb!important;
                 .layui-nav-more {border-color: #007DDB transparent transparent;}
             }
@@ -73,18 +72,39 @@ body {background-color: #ecf1f5;}
                 right: 20px;
             }
         }    
+        
+        
+         .layui-nav-tree .layui-nav-item {
+               > a { 
+                    background-repeat: no-repeat ;
+                    background-position: 50px center;
+                }
+                >a.install {
+                    background-image:url(../imgs/install.png);
+                }
+                >a.home {
+                    background-image:url(../imgs/home.png);
+                }
+                >a.repair {
+                    background-image:url(../imgs/repair.png);
+                }
+                >a.power {
+                    background-image:url(../imgs/power.png);
+                }
+                >a.customer {
+                    background-image:url(../imgs/customer.png);
+                }  
+                >a.account {
+                    background-image:url(../imgs/account.png);
+                }
+            
+        }
         .layui-nav-tree .layui-nav-item:first-child {
             &+.layui-nav-item  {
                 >a {
-                  background:url(../imgs/menu-apply.png) no-repeat 55px center;
-                }
-                &+.layui-nav-item  { 
-                    >a {
-                  background:url(../imgs/menu-repeair.png) no-repeat 55px center;
-                }
+                  background:url(../imgs/menu-apply.png) no-repeat 50px center;
                 }
             }
-            
         }
         
         .layui-nav-itemed .layui-nav-child {
@@ -142,6 +162,8 @@ body {background-color: #ecf1f5;}
  .mt58 {margin-top:58px;}
  
 .font-normal {font-weight: normal!important;}
+.hide {display: none!important;}
+
 
  .btn-8dc87d {background:#8dc87d!important;}  
  .btn-f18282 {background:#f18282!important;}
@@ -170,7 +192,7 @@ body {background-color: #ecf1f5;}
     }
 }
 
-.requireStar {color:red;height: 38px; display: inline-block; line-height: 38px;}
+.requireStar {color:red;width:10px;height: 38px; display: inline-block; line-height: 38px;}
  
 /*重写layui 选项卡*/
 .layui-tab-card{
@@ -199,8 +221,9 @@ body {background-color: #ecf1f5;}
                 .state-wrap {
                     padding:28px 35px;
                     .layui-btn {
-                        width:140px;
+                        width:154px;
                         border-radius: 4px;
+                        font-size: 16px;
                     }
                 }
             }
@@ -208,4 +231,19 @@ body {background-color: #ecf1f5;}
     }    
 }
 
+
+/*修改 */
+.layui-layout-admin {
+    .layui-nav .layui-nav-item { line-height: 80px;}
+    .layui-nav-tree .layui-nav-child a {font-size: 16px;}
+    .layui-header {
+        background-color: transparent;
+        img.top-bg {
+            position:absolute;
+            width:100%;
+            height:80px;
+        }
+    }
+    .layui-tab-title li {font-size: 16px;}
+}
 

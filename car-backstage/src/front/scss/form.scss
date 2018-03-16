@@ -30,10 +30,11 @@
         >.layui-tab-content {
             >.layui-tab-item {
                 >.layui-table {
-                    th {color:#fff;background-color:#c6c6c6;}
+                    th {color:#fff;background-color:#c6c6c6;font-size: 16px;text-align: center;}
                     tr {
                         td {
-                            font-size: 13px;
+                            font-size: 16px;
+                            text-align: center;
                             &:nth-child(odd) {
                                 font-weight: 550;
                             }
@@ -41,7 +42,7 @@
                     }
                 }
                 .content-title {
-                    font-size: 14px;
+                    font-size: 16px;
                     height:38px;
                     line-height: 38px;
                     background-color: #c6c6c6;
@@ -50,7 +51,7 @@
                 }
                 .layui-form {
                     margin-top:20px;
-                    .layui-form-label{display:inline-block;width:120px;font-size: 13px;font-weight: 700;
+                    .layui-form-label{display:inline-block;width:120px;font-size: 16px;font-weight: 700;
                         &.require {
                              &:before {content: '*';color:red;display: inline-block;padding-right: 10px;}
                         }
@@ -71,7 +72,7 @@ form.approve-result {
         background-color: #f0fce2;
         padding:14px 28px;
         >span {
-           font-size:14px;
+           font-size:16px;
            &:last-child {
                color:#a8a8a8;
            }
@@ -110,3 +111,6 @@ form.approve-result {
         }
     }    
 }
+
+.layui-form-radio * {font-size: 16px;}
+    .layui-btn {font-size: 16px;}

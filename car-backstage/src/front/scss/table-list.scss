@@ -16,9 +16,11 @@
             color:#fff;
             border-right: 1px solid #fff!important;
             text-align: center;
+            font-size: 18px;
         }
         td {
            text-align: center; 
+           font-size: 16px;
         }    
     }
 }    
@@ -32,9 +34,9 @@
         padding-left: 0;
         padding-right: 0px;
     }
-    label {font-size: 13px;}
+    label {font-size: 16px;}
     .time-line > label {
-        width: 70px;
+        width: 80px;
     }
     .layui-inline {margin-left: 15px;}
     .layui-form-select {display: inline-block;}
@@ -45,4 +47,8 @@
 .layui-table-page {
     .layui-laypage span.layui-laypage-count { margin-right: calc(100% - 565px);}
     .layui-laypage-limits select {color:#43948d!important;}
+}
+
+.layui-table-cell {
+    .layui-btn {font-size: 14px;}
 }

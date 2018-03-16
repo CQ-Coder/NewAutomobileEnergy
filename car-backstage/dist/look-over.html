@@ -18,6 +18,7 @@
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
 	  <div class="layui-header">
+	  	<img class="top-bg" src="front/imgs/top-bg.png">
 	  	<!-- 头部区域（可配合layui已有的水平导航） -->
 	  	<div class="nav-btn"></div>
 	    <ul class="layui-nav layui-layout-right" lay-filter="navList">
@@ -37,34 +38,30 @@
 	  </div>
 	  <div id="menu-left" class="layui-side">
 	  	<div class="logo">
-			<img src="front/imgs/personCenter-logo.png" />
-			<h3 class="energy-desc">
-				<p>亚 电 集 团</p>
-				<p>ASIA POWER GROUP</p>
-			</h3>
+			<img src="front/imgs/left-logo.png" />
 		</div>
 		<div style="height:20px;background:transparent;"></div>
 	    <div class="layui-side-scroll">
 	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
 	      <ul class="layui-nav layui-nav-tree" lay-filter="test">
-	        <li class="layui-nav-item"><a href="">首页</a></li>
+	        <li class="layui-nav-item"><a href="javascript:;" class="home">首页</a></li>
 	        <li class="layui-nav-item layui-nav-itemed">
-	          <a href="javascript:;">安装<span class="layui-nav-more"></span></a>
+	          <a href="javascript:;" class="install">安装<span class="layui-nav-more"></span></a>
 	          <dl class="layui-nav-child">
 	            <dd><a href="javascript:;">申请安装</a></dd>
 	            <dd><a href="javascript:;">申请记录</a></dd>
 	          </dl>
 	        </li>
 	        <li class="layui-nav-item layui-nav-itemed">
-	          <a href="javascript:;">报修<span class="layui-nav-more"></span></a>
+	          <a href="javascript:;" class="repair">报修<span class="layui-nav-more"></span></a>
 	          <dl class="layui-nav-child">
 	            <dd><a href="javascript:;">申请报修</a></dd>
 	            <dd><a href="javascript:;">报修记录</a></dd>
 	          </dl>
 	        </li>
-	        <li class="layui-nav-item"><a href="">客户管理</a></li>
-        	<li class="layui-nav-item"><a href="">权限管理</a></li>
-        	<li class="layui-nav-item"><a href="">账号管理</a></li>
+	        <li class="layui-nav-item"><a href="" class="customer">客户管理</a></li>
+        	<li class="layui-nav-item" ><a href="" class="power">权限管理</a></li>
+        	<li class="layui-nav-item" ><a href="" class="account">账号管理</a></li>
 	      </ul>
 	  	</div>
 	  </div>
@@ -126,9 +123,12 @@
 <script src="front/js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="front/js/common.js"></script>
 <script>
+	var imgBg = '<img class="menu-bg" src="front/imgs/left-bg.png" />';
+				
 	$("#menu-left").mCustomScrollbar({
 		theme:"minimal"
-	});
+	}).prepend($(imgBg));
+	
 	
 	//JavaScript代码区域
 	var element = layui.element;
