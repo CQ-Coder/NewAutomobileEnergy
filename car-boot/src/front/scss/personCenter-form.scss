@@ -56,7 +56,6 @@
             }
         }
     }
-    
     .layui-form-label {width:150px;font-size:16px;}
     .layui-tab-content {margin-top:20px;}
     .layui-input-block {margin-left:150px;
@@ -109,11 +108,16 @@
 
 
 /*修改密码*/
-.body-container.modifyPsw {
-    margin-top:100px;
-    width:711px;
-    .c-input {
-        width:70%;
+.body-container{
+    &.modifyPsw {
+        margin-top:100px;
+        width:711px;
+        .layui-form-label {
+            width:140px;
+        }
+        .c-input {
+            width:70%;
+        }
+        .tips {line-height:38px;margin-left:10px;color:#ccc;display: inline-block;}
     }
-    .tips {line-height:38px;margin-left:10px;color:#ccc;display: inline-block;}
 }
