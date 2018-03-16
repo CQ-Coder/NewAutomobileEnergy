@@ -15,7 +15,7 @@
                     height: 50px;
                     line-height: 50px;
                     background: red;
-                    font-size: 16px;
+                    font-size: 18px;
                     background: url(../imgs/tab-logo.png) no-repeat 0 center;
                 }
                 .content-title {
@@ -27,8 +27,12 @@
                     text-indent: 15px;
                 }
                 .main-content {
-                    padding-left:84px;
-                    padding-top:30px;
+                    padding-left: 84px;
+                    padding-top: 30px;
+                    border: 1px solid #ccc;
+                    padding-bottom: 30px;
+                    border-radius: 0 0 5px 5px;
+                    border-top: none;
                     .layui-btn {
                         width:102px;
                         height:30px;

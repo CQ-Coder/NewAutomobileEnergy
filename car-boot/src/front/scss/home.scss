@@ -37,8 +37,11 @@
     .big-title {
         height:144px;
         color:#fff;
-        h2{ margin-right: 20px;}
-        h2, h3 { font-size:26px;display: inline-block;margin-top:64px; vertical-align: middle;}
+        h2{ margin-right: 20px;font-size:36px;}
+        h3 {font-size:22px;
+            p:last-child {font-size:12px;}        
+        }
+        h3, h2{ display: inline-block;margin-top:64px; vertical-align: middle;}
         .energy-desc {font-size:19px;}
     }
     .list-item {
@@ -46,7 +49,7 @@
         width: 222px;
         height:286px;
         margin: 0 auto;
-        padding:10px;
+        padding:26px;
         cursor: pointer;
         img {
             position: relative;
@@ -59,14 +62,14 @@
             background: #000;
             opacity: .3;
             filter: alpha(opacity=30);
-            width: 242px;
-            height: 306px;
+            width: 270px;
+            height: 334px;
             left: 0px;
             top: 0px;
         }
         .img-desc {
             padding-top:10px;
-            font-size:22px;
+            font-size:18px;
             color:#fff;
             opacity: 1;
             position: relative;
